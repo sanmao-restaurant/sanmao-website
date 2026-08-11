@@ -63,7 +63,7 @@ body {
 
 /* Feuille de Menu Papier (Desktop) */
 .menu-paper {
-  background-image: url('/paper-bg.png');
+  background-image: url('./paper-bg.png');
   background-size: 100% 100%;           /* Force l'image à remplir parfaitement le conteneur */
   background-repeat: no-repeat;
   background-position: center;
@@ -76,9 +76,7 @@ body {
   padding: 70px 50px 50px 50px;         /* Calibre le texte au centre du papier */
   position: relative;
   box-sizing: border-box;
-
-  /* AJOUTE CETTE LIGNE : déplace le bloc de 80px vers la droite */
-  transform: translateX(80px); 
+  transform: translateX(80px);
 }
 
 /* Zone interne de défilement pour le texte */
@@ -185,9 +183,6 @@ body {
     cursor: pointer;
   }
 
-Voici l'intégralité du code à remplacer à partir de la ligne 188 jusqu'à la toute fin de ton fichier style.css :
-
-CSS
   /* Overlay Menu Mobile sur Fond Papier */
   .menu-paper {
     display: none;
@@ -201,7 +196,7 @@ CSS
     height: 122vw;
     max-height: 560px;
     
-    background-image: url('/paper-bg.png') !important;
+    background-image: url('./paper-bg.png') !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -252,5 +247,4 @@ CSS
     font-size: 11px;
     margin-bottom: 4px;
   }
-
 }
