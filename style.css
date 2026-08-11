@@ -63,7 +63,7 @@ body {
 
 /* Feuille de Menu Papier (Desktop) */
 .menu-paper {
-  background-image: url('paper-bg.png');
+  background-image: url('/paper-bg.png');
   background-size: 100% 100%;           /* Force l'image à remplir parfaitement le conteneur */
   background-repeat: no-repeat;
   background-position: center;
