@@ -80,7 +80,7 @@ body {
 
 /* Zone interne de défilement pour le texte */
 .menu-scroll-area {
-  max-height: calc(80vh - 90px);
+  max-height: calc(88vh - 115px); /* Ajuste la hauteur de défilement */
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 10px;
