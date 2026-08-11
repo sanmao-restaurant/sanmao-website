@@ -55,7 +55,9 @@ body {
   display: flex;
   justify-content: flex-end; /* Repousse le menu vers la droite */
   align-items: center;
+  width: 100%;
   padding-right: 16%; /* Ajuste la marge pour caler le menu comme sur la maquette */
+  box-sizing: border-box;
   flex-grow: 1;
 }
 
