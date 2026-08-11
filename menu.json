@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "name": "PETITES ASSIETTES",
+      "items": [
+        {"title": "Concombre mariné", "price": "8"},
+        {"title": "Chou chinois, vinaigre noir", "price": "9"},
+        {"title": "Tofu froid, sauce sésame", "price": "10"},
+        {"title": "Œuf century", "price": "11"}
+      ]
+    },
+    {
+      "name": "RAVIOLIS MAISON",
+      "items": [
+        {"title": "Porc & ciboulette (6 pièces)", "price": "12"},
+        {"title": "Crevette & bambou (6 pièces)", "price": "13"},
+        {"title": "Légumes de saison (6 pièces)", "price": "11"}
+      ]
+    },
+    {
+      "name": "GRANDS PLATS",
+      "items": [
+        {"title": "Poulet kung pao", "price": "16"},
+        {"title": "Bœuf au poivre noir", "price": "18"},
+        {"title": "Aubergine sichuanaise", "price": "15"},
+        {"title": "Riz cantonais", "price": "8"}
+      ]
+    },
+    {
+      "name": "DESSERTS",
+      "items": [
+        {"title": "Crème de sésame noir", "price": "7"},
+        {"title": "Perles de coco, gingembre", "price": "7"}
+      ]
+    },
+    {
+      "name": "BOISSONS",
+      "items": [
+        {"title": "Thé vert jasmin", "price": "4"},
+        {"title": "Bière chinoise", "price": "6"},
+        {"title": "Vin nature", "price": "9"},
+        {"title": "Baijiu", "price": "8"}
+      ]
+    }
+  ]
+}

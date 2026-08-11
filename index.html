@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANMAO — Restaurant Paris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="bg-day">
+
+  <!-- En-tête -->
+  <header class="top-bar">
+    <h1 class="logo">SANMAO</h1>
+    <a href="https://www.instagram.com/sanmao.belleville/" target="_blank" class="insta-icon" aria-label="Instagram">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#014727" stroke-width="2">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+    <a href="LIEN_LIGHTSPEED" class="btn-reserver desktop-only">RÉSERVER</a>
+  </header>
+
+  <!-- Zone Centrale Desktop / Mobile -->
+  <main class="main-container">
+    
+    <!-- Boutons Mobile -->
+    <div class="mobile-actions mobile-only">
+      <a href="LIEN_LIGHTSPEED" class="btn-reserver">RÉSERVER</a>
+      <button id="open-menu-btn" class="btn-menu">MENU</button>
+    </div>
+
+    <!-- Feuille de Menu (Fixe à droite sur Desktop / Overlay sur Mobile) -->
+    <div id="menu-overlay" class="menu-paper">
+      <button id="close-menu-btn" class="close-btn mobile-only">&times;</button>
+      
+      <div class="menu-header">
+        <h2>MENU</h2>
+        <p class="subtitle">CARTE DU JOUR</p>
+      </div>
+
+      <div id="menu-content"></div>
+    </div>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer-bar">
+    <span>64 RUE REBEVAL, 75019 PARIS</span>
+    <span class="sep">|</span>
+    <span>MARDI – DIMANCHE, 18:00 – 23:00</span>
+    <span class="sep">|</span>
+    <a href="tel:+33142410165">+33 1 42 41 01 65</a>
+    <span class="sep">|</span>
+    <a href="mailto:hello@sanmao-restaurant.com">hello@sanmao-restaurant.com</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

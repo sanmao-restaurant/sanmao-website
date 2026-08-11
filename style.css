@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #014727;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--green);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Empêche tout scroll */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  /* L'image du jour s'affichera ici dynamiquement */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* En-tête */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+}
+
+.logo {
+  font-size: 28px;
+  letter-spacing: 4px;
+  font-weight: 800;
+}
+
+.btn-reserver {
+  background-color: var(--green);
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  font-size: 14px;
+}
+
+/* Zone Centrale (Place le menu à droite sur ordinateur) */
+.main-container {
+  display: flex;
+  justify-content: flex-end; /* Repousse le menu vers la droite */
+  align-items: center;
+  padding-right: 8%; /* Ajuste la marge pour caler le menu comme sur la maquette */
+  flex-grow: 1;
+}
+
+/* Feuille de Menu Papier */
+.menu-paper {
+  background: rgba(244, 239, 223, 0.95); /* Effet papier légèrement translucide */
+  padding: 40px;
+  width: 380px;
+  max-height: 72vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.menu-header h2 {
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+.menu-header .subtitle {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.menu-section {
+  margin-bottom: 22px;
+}
+
+.menu-section h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #222;
+}
+
+/* Footer */
+.footer-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.footer-bar a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.sep {
+  opacity: 0.5;
+}
+
+/* Responsive Mobile */
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+
+  .top-bar {
+    padding: 20px;
+  }
+
+  .main-container {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    margin-bottom: 40px;
+  }
+
+  .btn-menu {
+    background: none;
+    border: none;
+    color: var(--green);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
+
+  /* Overlay Menu Mobile */
+  .menu-paper {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 88vw;
+    height: 75vh;
+    z-index: 100;
+  }
+
+  .menu-paper.active {
+    display: block;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: var(--green);
+    cursor: pointer;
+  }
+}
