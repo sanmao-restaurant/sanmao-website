@@ -76,6 +76,9 @@ body {
   padding: 70px 50px 50px 50px;         /* Calibre le texte au centre du papier */
   position: relative;
   box-sizing: border-box;
+
+  /* AJOUTE CETTE LIGNE : déplace le bloc de 80px vers la droite */
+  transform: translateX(80px); 
 }
 
 /* Zone interne de défilement pour le texte */
