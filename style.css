@@ -156,24 +156,28 @@ body {
   .desktop-only { display: none !important; }
   .mobile-only { display: block !important; }
 
+  /* Force l'affichage du header tout en haut */
   .top-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     padding: 20px 25px !important;
+    width: 100% !important;
   }
 
   .main-container {
     justify-content: center !important;
-    align-items: center !important;
+    align-items: flex-end !important; /* Place les boutons en bas */
     padding-right: 0 !important;
+    padding-bottom: 90px !important;  /* Remonte légèrement les boutons */
   }
 
-  /* Centrage et remontee des boutons Réserver / Menu */
+  /* Boutons empilés vertikalement */
   .mobile-actions {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    margin-bottom: 80px !important; /* Remonte l'ensemble */
+    gap: 18px !important;
   }
 
   .btn-menu {
@@ -186,7 +190,7 @@ body {
     cursor: pointer;
   }
 
-  /* Feuille papier agrandie & recalibrée */
+  /* Feuille papier ajustée */
   .menu-paper {
     display: none !important;
     position: fixed !important;
@@ -207,7 +211,7 @@ body {
     box-shadow: none !important;
     border: none !important;
     
-    padding: 55px 28px 25px 28px !important; /* Espace interne optimisé */
+    padding: 55px 28px 25px 28px !important;
     z-index: 100 !important;
   }
 
@@ -231,7 +235,7 @@ body {
     z-index: 101;
   }
 
-  /* Ajustements fins typographie pour eviter tout debordement */
+  /* Typographie mobile */
   .menu-paper .menu-header h2 { font-size: 16px !important; }
   .menu-paper .menu-header .subtitle { font-size: 9px !important; margin-bottom: 10px !important; }
   .menu-paper .menu-section h3 { font-size: 10px !important; margin-bottom: 5px !important; }
