@@ -215,7 +215,7 @@ body {
   }
 
   .menu-scroll-area {
-    max-height: calc(82vh - 90px);
+    max-height: calc(100% - 30px);
   }
 
   .close-btn {
