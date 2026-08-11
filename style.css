@@ -13,7 +13,7 @@ body {
   color: var(--green);
   height: 100vh;
   width: 100vw;
-  overflow: hidden; /* Empêche tout scroll */
+  overflow: hidden; /* Empêche tout scroll de la page */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,9 +50,20 @@ body {
   font-size: 14px;
 }
 
-/* Feuille de Menu Papier */
+/* Zone Centrale (Place le menu à droite sur ordinateur) */
+.main-container {
+  display: flex;
+  justify-content: flex-end; /* Repousse le menu vers la droite */
+  align-items: center;
+  width: 100%;
+  padding-right: 16%; /* Ajuste la marge pour caler le menu */
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+/* Feuille de Menu Papier (Desktop) */
 .menu-paper {
-  background-image: url('paper-bg.png'); /* Image de ta feuille avec le scotch */
+  background-image: url('paper-bg.png'); /* Ton image PNG détourée */
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,12 +73,12 @@ body {
   
   width: 420px;
   max-height: 80vh;
-  padding: 50px 35px 40px 35px; /* Marges pour caler le texte dans le papier */
+  padding: 50px 35px 40px 35px; /* Empêche le texte d'empiéter sur les bords du papier */
   position: relative;
   box-sizing: border-box;
 }
 
-/* Zone interne pour le défilement du texte */
+/* Zone interne de défilement pour le texte */
 .menu-scroll-area {
   max-height: calc(80vh - 90px);
   overflow-y: auto;
@@ -75,24 +86,13 @@ body {
   padding-right: 10px;
 }
 
-/* Barre de scroll discrète */
+/* Style de la barre de scroll interne (discrète) */
 .menu-scroll-area::-webkit-scrollbar {
   width: 5px;
 }
 .menu-scroll-area::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-}
-
-/* Feuille de Menu Papier */
-.menu-paper {
-  background: rgba(244, 239, 223, 0.95); /* Effet papier légèrement translucide */
-  padding: 40px;
-  width: 380px;
-  max-height: 72vh;
-  overflow-y: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  position: relative;
 }
 
 .menu-header h2 {
@@ -182,7 +182,7 @@ body {
     cursor: pointer;
   }
 
-  /* Overlay Menu Mobile */
+  /* Overlay Menu Mobile sur Fond Papier */
   .menu-paper {
     display: none;
     position: fixed;
@@ -191,7 +191,7 @@ body {
     transform: translate(-50%, -50%);
     width: 90vw;
     max-height: 82vh;
-    padding: 60px 25px 30px 25px; /* Plus d'espace en haut pour la croix */
+    padding: 60px 25px 30px 25px; /* Marge supérieure pour dégager le bouton (X) */
     z-index: 100;
   }
 
@@ -212,5 +212,6 @@ body {
     border: none;
     color: var(--green);
     cursor: pointer;
+    z-index: 101;
   }
 }
