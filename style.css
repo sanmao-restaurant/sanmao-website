@@ -26,10 +26,12 @@ body {
 
 /* En-tête */
 .top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   padding: 25px 40px;
+  width: 100%;
+  z-index: 20;
 }
 
 .logo {
@@ -155,21 +157,23 @@ body {
   .mobile-only { display: block !important; }
 
   .top-bar {
-    padding: 20px;
+    padding: 20px 25px !important;
   }
 
   .main-container {
-    justify-content: center;
-    padding-right: 0;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-right: 0 !important;
   }
 
+  /* Centrage et remontee des boutons Réserver / Menu */
   .mobile-actions {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 15px !important;
-    width: 100% !important;
+    gap: 20px !important;
+    margin-bottom: 80px !important; /* Remonte l'ensemble */
   }
 
   .btn-menu {
@@ -182,7 +186,7 @@ body {
     cursor: pointer;
   }
 
-  /* La feuille est MASQUÉE par défaut sur mobile */
+  /* Feuille papier agrandie & recalibrée */
   .menu-paper {
     display: none !important;
     position: fixed !important;
@@ -190,10 +194,10 @@ body {
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     
-    width: 90vw !important;
-    max-width: 380px !important;
-    height: 120vw !important;
-    max-height: 520px !important;
+    width: 94vw !important;
+    max-width: 410px !important;
+    height: 125vw !important;
+    max-height: 570px !important;
     
     background-image: url('./paper-bg.png') !important;
     background-size: contain !important;
@@ -203,24 +207,23 @@ body {
     box-shadow: none !important;
     border: none !important;
     
-    padding: 60px 30px 30px 30px !important;
+    padding: 55px 28px 25px 28px !important; /* Espace interne optimisé */
     z-index: 100 !important;
   }
 
-  /* Elle s'affiche SEULEMENT au clic */
   .menu-paper.active {
     display: block !important;
   }
 
   .menu-scroll-area {
-    max-height: calc(100% - 20px) !important;
+    max-height: calc(100% - 15px) !important;
   }
 
   .close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 32px;
+    top: 12px;
+    right: 18px;
+    font-size: 30px;
     background: none;
     border: none;
     color: var(--green);
@@ -228,8 +231,9 @@ body {
     z-index: 101;
   }
 
-  .menu-paper .menu-header h2 { font-size: 17px; }
-  .menu-paper .menu-header .subtitle { font-size: 10px; margin-bottom: 12px; }
-  .menu-paper .menu-section h3 { font-size: 11px; margin-bottom: 6px; }
-  .menu-paper .menu-item { font-size: 10px; margin-bottom: 3px; }
+  /* Ajustements fins typographie pour eviter tout debordement */
+  .menu-paper .menu-header h2 { font-size: 16px !important; }
+  .menu-paper .menu-header .subtitle { font-size: 9px !important; margin-bottom: 10px !important; }
+  .menu-paper .menu-section h3 { font-size: 10px !important; margin-bottom: 5px !important; }
+  .menu-paper .menu-item { font-size: 9,5px !important; margin-bottom: 2px !important; }
 }
