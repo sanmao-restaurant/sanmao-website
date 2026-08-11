@@ -50,15 +50,38 @@ body {
   font-size: 14px;
 }
 
-/* Zone Centrale (Place le menu à droite sur ordinateur) */
-.main-container {
-  display: flex;
-  justify-content: flex-end; /* Repousse le menu vers la droite */
-  align-items: center;
-  width: 100%;
-  padding-right: 16%; /* Ajuste la marge pour caler le menu comme sur la maquette */
+/* Feuille de Menu Papier */
+.menu-paper {
+  background-image: url('paper-bg.png'); /* Image de ta feuille avec le scotch */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  
+  width: 420px;
+  max-height: 80vh;
+  padding: 50px 35px 40px 35px; /* Marges pour caler le texte dans le papier */
+  position: relative;
   box-sizing: border-box;
-  flex-grow: 1;
+}
+
+/* Zone interne pour le défilement du texte */
+.menu-scroll-area {
+  max-height: calc(80vh - 90px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+
+/* Barre de scroll discrète */
+.menu-scroll-area::-webkit-scrollbar {
+  width: 5px;
+}
+.menu-scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 
 /* Feuille de Menu Papier */
@@ -166,13 +189,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 88vw;
-    height: 75vh;
+    width: 90vw;
+    max-height: 82vh;
+    padding: 60px 25px 30px 25px; /* Plus d'espace en haut pour la croix */
     z-index: 100;
   }
 
   .menu-paper.active {
     display: block;
+  }
+
+  .menu-scroll-area {
+    max-height: calc(82vh - 90px);
   }
 
   .close-btn {
