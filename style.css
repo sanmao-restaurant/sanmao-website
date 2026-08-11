@@ -64,16 +64,17 @@ body {
 /* Feuille de Menu Papier (Desktop) */
 .menu-paper {
   background-image: url('paper-bg.png');
-  background-size: 100% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
   
-  width: 490px;                 /* Agrandit la largeur du papier */
-  max-height: 88vh;             /* Agrandit la hauteur du papier */
-  padding: 65px 45px 50px 45px; /* Marges pour bien cadrer le texte */
+  /* Dimensions pour accueillir l'image HD et couvrir tout le menu */
+  width: 580px;
+  height: 85vh;
+  padding: 80px 60px 60px 60px;
   position: relative;
   box-sizing: border-box;
 }
