@@ -167,9 +167,9 @@ body {
 
   .main-container {
     justify-content: center !important;
-    align-items: flex-end !important; /* Place les boutons en bas */
+    align-items: flex-end !important;
     padding-right: 0 !important;
-    padding-bottom: 90px !important;  /* Remonte légèrement les boutons */
+    padding-bottom: 50px !important; /* Calage parfait juste sous le centre */
   }
 
   /* Boutons empilés vertikalement */
