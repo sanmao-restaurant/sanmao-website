@@ -185,7 +185,10 @@ body {
     cursor: pointer;
   }
 
-/* Overlay Menu Mobile sur Fond Papier */
+Voici l'intégralité du code à remplacer à partir de la ligne 188 jusqu'à la toute fin de ton fichier style.css :
+
+CSS
+  /* Overlay Menu Mobile sur Fond Papier */
   .menu-paper {
     display: none;
     position: fixed;
@@ -193,23 +196,23 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) !important;
     
-    /* Dimensions calées sur le ratio 3:4 de l'image originale */
-    width: 88vw;
-    max-width: 360px;
-    height: 117vw;
-    max-height: 480px;
+    width: 92vw;
+    max-width: 420px;
+    height: 122vw;
+    max-height: 560px;
     
     background-image: url('/paper-bg.png') !important;
-    background-size: contain !important;       /* Préserve les proportions de la photo */
+    background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-color: transparent !important;
     box-shadow: none !important;
     border: none !important;
     
-    padding: 50px 25px 25px 25px;               /* Remonte légèrement le texte */
+    padding: 70px 35px 35px 35px;
     z-index: 100;
   }
+
   .menu-paper.active {
     display: block;
   }
@@ -229,4 +232,25 @@ body {
     cursor: pointer;
     z-index: 101;
   }
+
+  /* Réduction légère de la typographie sur mobile */
+  .menu-paper .menu-header h2 {
+    font-size: 18px;
+  }
+
+  .menu-paper .menu-header .subtitle {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+
+  .menu-paper .menu-section h3 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .menu-paper .menu-item {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
 }
