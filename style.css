@@ -135,6 +135,7 @@ body {
   padding: 20px;
   font-size: 11px;
   letter-spacing: 1px;
+  z-index: 10;
 }
 
 .footer-bar a {
@@ -147,7 +148,7 @@ body {
 }
 
 /* Responsive Mobile */
-.mobile-only { display: none; }
+.mobile-only { display: none !important; }
 
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
@@ -163,12 +164,12 @@ body {
   }
 
   .mobile-actions {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     margin-top: auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .btn-menu {
@@ -181,7 +182,7 @@ body {
     cursor: pointer;
   }
 
-  /* Cache la feuille par défaut sur mobile et réinitialise le transform */
+  /* La feuille est MASQUÉE par défaut sur mobile */
   .menu-paper {
     display: none !important;
     position: fixed !important;
@@ -206,7 +207,7 @@ body {
     z-index: 100 !important;
   }
 
-  /* Affiche la feuille uniquement quand elle est active */
+  /* Elle s'affiche SEULEMENT au clic */
   .menu-paper.active {
     display: block !important;
   }
@@ -227,9 +228,8 @@ body {
     z-index: 101;
   }
 
-  /* Typographie mobile */
   .menu-paper .menu-header h2 { font-size: 17px; }
   .menu-paper .menu-header .subtitle { font-size: 10px; margin-bottom: 12px; }
   .menu-paper .menu-section h3 { font-size: 11px; margin-bottom: 6px; }
-  .menu-paper .menu-item { font-size: 10,5px; margin-bottom: 3px; }
+  .menu-paper .menu-item { font-size: 10px; margin-bottom: 3px; }
 }
