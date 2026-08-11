@@ -33,15 +33,18 @@
     <!-- Feuille de Menu (Fixe à droite sur Desktop / Overlay sur Mobile) -->
     <div id="menu-overlay" class="menu-paper">
       <button id="close-menu-btn" class="close-btn mobile-only">&times;</button>
-      
-      <div class="menu-header">
-        <h2>MENU</h2>
-        <p class="subtitle">CARTE DU JOUR</p>
+
+      <!-- Nouvelle enveloppe de défilement -->
+      <div class="menu-scroll-area">
+        <div class="menu-header">
+          <h2>MENU</h2>
+          <p class="subtitle">CARTE DU JOUR</p>
+        </div>
+
+        <div id="menu-content"></div>
       </div>
-
-      <div id="menu-content"></div>
     </div>
-
+    
   </main>
 
   <!-- Pied de page -->
