@@ -192,20 +192,24 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) !important;
-    width: 90vw;
-    height: 80vh;
-    max-height: 650px;
+    
+    /* Dimensions calées sur le ratio 3:4 de l'image originale */
+    width: 88vw;
+    max-width: 360px;
+    height: 117vw;
+    max-height: 480px;
+    
     background-image: url('/paper-bg.png') !important;
-    background-size: 100% 100% !important;
+    background-size: contain !important;       /* Préserve les proportions de la photo */
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-color: transparent !important;
     box-shadow: none !important;
     border: none !important;
-    padding: 65px 25px 30px 25px;
+    
+    padding: 50px 25px 25px 25px;               /* Remonte légèrement le texte */
     z-index: 100;
   }
-
   .menu-paper.active {
     display: block;
   }
