@@ -1,4 +1,3 @@
-CSS
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,11 +15,12 @@ body {
   width: 100vw;
   overflow: hidden;
   
-  /* Photo de fond fixe */
-  background-image: url('./votre-photo-de-fond.jpg');
+  /* Photo de fond plein écran */
+  background-image: url('./A_REMPLACER_PAR_LE_NOM_DE_VOTRE_IMAGE.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* En-tête */
@@ -28,7 +28,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 45px; /* Marge interne généreuse pour décoller des bords */
+  padding: 30px 45px; /* Marge interne pour décoller du haut et des bords */
   width: 100%;
 }
 
@@ -42,7 +42,7 @@ body {
 .social-links {
   display: flex;
   align-items: center;
-  gap: 18px; /* Espace entre l'icône Instagram et l'icône RED */
+  gap: 20px; /* Espacement entre Instagram et RED */
 }
 
 .social-icon {
@@ -56,7 +56,7 @@ body {
   opacity: 0.7;
 }
 
-/* Adaptations Mobile */
+/* Responsive Mobile */
 @media (max-width: 768px) {
   .top-bar {
     padding: 20px 25px;
