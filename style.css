@@ -16,7 +16,7 @@ body {
   overflow: hidden;
   
   /* Chemin vers la photo située dans le dossier photos */
-  background-image: url('./photos/9B7E9179-800E-4C69-B2D2-4242F9864953.JPG');
+  background-image: url('photos/9B7E9179-800E-4C69-B2D2-4242F9864953.JPG');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
