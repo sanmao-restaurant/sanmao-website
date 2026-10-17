@@ -15,7 +15,7 @@ body {
   width: 100vw;
   overflow: hidden;
   
-  /* Photo de fond plein écran */
+  /* Chemin vers la photo située dans le dossier photos */
   background-image: url('./9B7E9179-800E-4C69-B2D2-4242F9864953.JPG');
   background-position: center center;
   background-repeat: no-repeat;
