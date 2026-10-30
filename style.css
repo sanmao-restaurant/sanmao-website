@@ -57,12 +57,6 @@ body {
   opacity: 0.7;
 }
 
-/* Transformation du logo PNG rouge vers le vert exact #014727 */
-.red-icon {
-  display: block;
-  filter: invert(18%) sepia(48%) saturate(1980%) hue-rotate(118deg) brightness(95%) contrast(98%);
-  transition: opacity 0.2s;
-}
 
 .btn-reservation {
   background-color: var(--green);
