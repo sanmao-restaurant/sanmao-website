@@ -15,11 +15,11 @@ body {
   color: var(--green);
   height: 100vh;
   width: 100vw;
-  overflow: hidden; /* Empêche le scroll global de la page */
+  overflow: hidden;
   background-color: #fdfbf7;
 }
 
-/* Navigation fixe en haut */
+/* Header */
 .top-bar {
   position: fixed;
   top: 0;
@@ -40,7 +40,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* Réseaux sociaux au centre */
 .social-center {
   display: flex;
   align-items: center;
@@ -58,7 +57,6 @@ body {
   opacity: 0.7;
 }
 
-/* Bouton Réservation fixe (fond vert, texte blanc, pas de survol) */
 .btn-reservation {
   background-color: var(--green);
   color: var(--white);
@@ -71,7 +69,7 @@ body {
   display: inline-block;
 }
 
-/* Conteneur principal */
+/* Zone principale */
 .hero-wrapper {
   height: 100vh;
   width: 100vw;
@@ -81,34 +79,54 @@ body {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Calé sur la moitié droite */
-  padding: 90px 5% 30px; /* Marge en haut pour laisser la place au header */
+  justify-content: flex-end;
+  padding: 90px 5% 30px;
 }
 
-/* Carte de menu (moitié droite, défilement interne si trop long) */
+/* Carte Menu : Taille réduite de 20% (36vw au lieu de 45vw) */
 .menu-card {
   background-color: var(--card-bg);
-  padding: 35px 30px;
-  width: 45vw; /* Occupe environ la moitié droite */
-  max-width: 550px;
-  min-width: 320px;
-  max-height: calc(100vh - 120px); /* Ne dépasse jamais la hauteur de l'écran */
-  overflow-y: auto; /* Défilement à l'intérieur de la boîte */
+  padding: 28px 24px; /* Rembourrage réduit de 20% */
+  width: 36vw; 
+  max-width: 440px;
+  min-width: 280px;
+  max-height: calc(80vh - 80px); /* Hauteur max réduite de 20% */
+  overflow-y: auto;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border-radius: 6px;
+  
+  /* Propriété standard pour masquer la barre de scroll par défaut */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
 }
 
-/* Style de la barre de défilement de la carte */
-.menu-card::-webkit-scrollbar {
-  width: 6px;
+/* Affichage discret de la scrollbar uniquement au survol du menu (Firefox) */
+.menu-card:hover {
+  scrollbar-color: rgba(1, 71, 39, 0.25) transparent;
 }
+
+/* Gestion du scroll sur Chrome / Safari / Edge / Brave */
+.menu-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .menu-card::-webkit-scrollbar-thumb {
-  background-color: var(--green);
-  border-radius: 3px;
+  background-color: transparent; /* Masquée par défaut */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-card:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(1, 71, 39, 0.25); /* Couleur verte très discrète au survol */
 }
 
 .menu-category {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .menu-category:last-child {
@@ -116,11 +134,11 @@ body {
 }
 
 .menu-category h2 {
-  font-size: 15px;
+  font-size: 13px; /* Taille typographique ajustée (-20%) */
   letter-spacing: 2px;
   border-bottom: 1px solid var(--green);
-  padding-bottom: 6px;
-  margin-bottom: 12px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -132,22 +150,22 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 13px;
+  margin-bottom: 7px;
+  font-size: 11px; /* Texte des plats ajusté (-20%) */
 }
 
 .item-dots {
   flex: 1;
   border-bottom: 1px dotted var(--green);
-  margin: 0 10px;
-  opacity: 0.5;
+  margin: 0 8px;
+  opacity: 0.4;
 }
 
 .item-price {
   font-weight: bold;
 }
 
-/* Adaptations Mobile */
+/* Responsive mobile */
 @media (max-width: 768px) {
   .top-bar {
     padding: 15px 20px;
@@ -156,12 +174,12 @@ body {
     font-size: 18px;
   }
   .hero-wrapper {
-    justify-content: center; /* Centré sur mobile pour la lisibilité */
+    justify-content: center;
     padding: 85px 15px 20px;
   }
   .menu-card {
     width: 100%;
-    max-height: calc(100vh - 110px);
-    padding: 25px 20px;
+    max-height: calc(85vh - 90px);
+    padding: 20px 16px;
   }
 }
