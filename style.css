@@ -7,16 +7,19 @@
 :root {
   --green: #014727;
   --card-bg: rgba(253, 251, 247, 0.94);
+  --white: #ffffff;
 }
 
 body {
   font-family: 'Courier New', Courier, monospace;
   color: var(--green);
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Empêche le scroll global de la page */
   background-color: #fdfbf7;
 }
 
-/* Navigation fixe haut */
+/* Navigation fixe en haut */
 .top-bar {
   position: fixed;
   top: 0;
@@ -37,60 +40,75 @@ body {
   letter-spacing: 2px;
 }
 
-.insta-center {
+/* Réseaux sociaux au centre */
+.social-center {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icon {
   color: var(--green);
   display: flex;
   align-items: center;
   transition: opacity 0.2s;
 }
 
-.insta-center:hover {
+.social-icon:hover {
   opacity: 0.7;
 }
 
+/* Bouton Réservation fixe (fond vert, texte blanc, pas de survol) */
 .btn-reservation {
-  color: var(--green);
+  background-color: var(--green);
+  color: var(--white);
   text-decoration: none;
   font-weight: bold;
   font-size: 13px;
   border: 1px solid var(--green);
   padding: 8px 16px;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  display: inline-block;
 }
 
-.btn-reservation:hover {
-  background-color: var(--green);
-  color: #fdfbf7;
-}
-
-/* Zone héro avec fond image */
+/* Conteneur principal */
 .hero-wrapper {
-  min-height: 100vh;
-  width: 100%;
-  background-image: url('paper-bg.jpg'); /* Fond de secours */
+  height: 100vh;
+  width: 100vw;
+  background-image: url('paper-bg.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 100px 20px 60px;
+  justify-content: flex-end; /* Calé sur la moitié droite */
+  padding: 90px 5% 30px; /* Marge en haut pour laisser la place au header */
 }
 
-/* Carte Menu Superposée */
+/* Carte de menu (moitié droite, défilement interne si trop long) */
 .menu-card {
   background-color: var(--card-bg);
-  padding: 40px;
-  max-width: 650px;
-  width: 100%;
+  padding: 35px 30px;
+  width: 45vw; /* Occupe environ la moitié droite */
+  max-width: 550px;
+  min-width: 320px;
+  max-height: calc(100vh - 120px); /* Ne dépasse jamais la hauteur de l'écran */
+  overflow-y: auto; /* Défilement à l'intérieur de la boîte */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border-radius: 6px;
 }
 
+/* Style de la barre de défilement de la carte */
+.menu-card::-webkit-scrollbar {
+  width: 6px;
+}
+.menu-card::-webkit-scrollbar-thumb {
+  background-color: var(--green);
+  border-radius: 3px;
+}
+
 .menu-category {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .menu-category:last-child {
@@ -98,11 +116,11 @@ body {
 }
 
 .menu-category h2 {
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 2px;
   border-bottom: 1px solid var(--green);
   padding-bottom: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
@@ -114,8 +132,8 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 8px;
+  font-size: 13px;
 }
 
 .item-dots {
@@ -129,19 +147,21 @@ body {
   font-weight: bold;
 }
 
-/* Responsive mobile */
-@media (max-width: 600px) {
+/* Adaptations Mobile */
+@media (max-width: 768px) {
   .top-bar {
     padding: 15px 20px;
   }
   .logo {
     font-size: 18px;
   }
-  .btn-reservation {
-    padding: 6px 10px;
-    font-size: 11px;
+  .hero-wrapper {
+    justify-content: center; /* Centré sur mobile pour la lisibilité */
+    padding: 85px 15px 20px;
   }
   .menu-card {
+    width: 100%;
+    max-height: calc(100vh - 110px);
     padding: 25px 20px;
   }
 }
