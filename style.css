@@ -19,7 +19,7 @@ body {
   background-color: #fdfbf7;
 }
 
-/* Header */
+/* Header avec 48% d'opacité */
 .top-bar {
   position: fixed;
   top: 0;
@@ -30,8 +30,8 @@ body {
   align-items: center;
   padding: 20px 30px;
   z-index: 100;
-  background-color: rgba(253, 251, 247, 0.85);
-  backdrop-filter: blur(5px);
+  background-color: rgba(253, 251, 247, 0.48); /* Couleur de fond à 48% d'opacité */
+  backdrop-filter: blur(5px);                  /* Flou léger pour garder la lisibilité */
 }
 
 .logo {
