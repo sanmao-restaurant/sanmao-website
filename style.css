@@ -51,13 +51,13 @@ body {
   display: flex;
   align-items: center;
   transition: opacity 0.2s;
-  text-decoration: none;
 }
 
 .social-icon:hover {
   opacity: 0.7;
 }
 
+/* Logo RED avec ses couleurs d'origine */
 .red-icon {
   display: block;
   object-fit: contain;
@@ -98,7 +98,7 @@ body {
 .menu-card {
   background-color: var(--card-bg);
   padding: 28px 24px;
-  width: 36vw;
+  width: 36vw; 
   max-width: 440px;
   min-width: 280px;
   max-height: calc(80vh - 80px);
