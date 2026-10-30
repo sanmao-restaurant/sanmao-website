@@ -6,18 +6,17 @@
 
 :root {
   --green: #014727;
-  --card-bg: rgba(253, 251, 247, 0.92); /* Boîte de texte semi-transparente */
+  --card-bg: rgba(253, 251, 247, 0.94);
 }
 
 body {
   font-family: 'Courier New', Courier, monospace;
   color: var(--green);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #fdfbf7;
 }
 
-/* En-tête fixe en 3 parties */
+/* Navigation fixe haut */
 .top-bar {
   position: fixed;
   top: 0;
@@ -28,7 +27,8 @@ body {
   align-items: center;
   padding: 20px 30px;
   z-index: 100;
-  background-color: transparent;
+  background-color: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(5px);
 }
 
 .logo {
@@ -52,11 +52,11 @@ body {
   color: var(--green);
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   border: 1px solid var(--green);
   padding: 8px 16px;
   border-radius: 4px;
-  transition: background-color 0.2s, color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .btn-reservation:hover {
@@ -64,28 +64,69 @@ body {
   color: #fdfbf7;
 }
 
-/* Container de l'image de fond plein écran */
+/* Zone héro avec fond image */
 .hero-wrapper {
   min-height: 100vh;
-  width: 100vw;
-  background-position: center;
+  width: 100%;
+  background-image: url('paper-bg.jpg'); /* Fond de secours */
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 20px 40px; /* Espace pour ne pas chevaucher la top-bar */
+  padding: 100px 20px 60px;
 }
 
-/* Boîte de texte superposée */
+/* Carte Menu Superposée */
 .menu-card {
   background-color: var(--card-bg);
   padding: 40px;
-  max-width: 600px;
+  max-width: 650px;
   width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.menu-category {
+  margin-bottom: 30px;
+}
+
+.menu-category:last-child {
+  margin-bottom: 0;
+}
+
+.menu-category h2 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.menu-items {
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.item-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--green);
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+.item-price {
+  font-weight: bold;
 }
 
 /* Responsive mobile */
@@ -98,9 +139,9 @@ body {
   }
   .btn-reservation {
     padding: 6px 10px;
-    font-size: 12px;
+    font-size: 11px;
   }
   .menu-card {
-    padding: 25px;
+    padding: 25px 20px;
   }
 }
