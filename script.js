@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
   const todayFilename = `${month}-${day}.jpg`; // ex: 10-30.jpg
-  const todayImagePath = `./photos/${todayFilename}`;
+  const todayImagePath = `photos/${todayFilename}`;
 
-  // 2. On applique en priorité la photo du jour
+  // Application prioritaire de la photo du jour
   heroBg.style.backgroundImage = `url('${todayImagePath}')`;
 
-  // 3. Si l'image du jour n'existe pas ou échoue, on bascule sur paper-bg.png
-  const imgTester = new Image();
-  imgTester.onerror = () => {
+  // Vérification en arrière-plan : si 10-30.jpg échoue, basculer sur paper-bg.png
+  const todayImage = new Image();
+  todayImage.onerror = () => {
     heroBg.style.backgroundImage = `url('paper-bg.png')`;
   };
-  imgTester.src = todayImagePath;
+  todayImage.src = todayImagePath;
 
-  // 4. Chargement du menu JSON
+  // 2. Chargement du menu JSON
   fetch("menu.json")
     .then((response) => response.json())
     .then((data) => {
