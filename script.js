@@ -1,25 +1,24 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const heroBg = document.getElementById("hero-bg");
   const menuContent = document.getElementById("menu-content");
 
-  // 1. Gestion dynamique de l'image de fond
+  // 1. Gestion dynamique de l'image de fond selon la date du jour
   const today = new Date();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
   const todayFilename = `${month}-${day}.jpg`; // ex: 10-30.jpg
-
-  const todayImage = new Image();
   const todayImagePath = `photos/${todayFilename}`;
 
+  const todayImage = new Image();
+
   todayImage.onload = () => {
-    // Si l'image de la date existe (ex: photos/10-30.jpg)
+    // Si la photo de la date existe (photos/10-30.jpg)
     heroBg.style.backgroundImage = `url('${todayImagePath}')`;
   };
 
   todayImage.onerror = () => {
-    // Si pas de photo pour la date du jour, fallback sur paper-bg.jpg ou photos/bg.jpg
-    heroBg.style.backgroundImage = `url('paper-bg.jpg')`;
+    // En cas d'absence, fallback sur paper-bg.png (et non .jpg)
+    heroBg.style.backgroundImage = `url('paper-bg.png')`;
   };
 
   todayImage.src = todayImagePath;
@@ -32,11 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
       console.error("Erreur lors du chargement du menu :", error);
-      menuContent.innerHTML = "<p>Menu indisponible pour le moment.</p>";
+      if (menuContent) {
+        menuContent.innerHTML = "<p>Menu indisponible pour le moment.</p>";
+      }
     });
 
   function renderMenu(data) {
-    if (!data.categories) return;
+    if (!data.categories || !menuContent) return;
 
     let html = "";
     data.categories.forEach((cat) => {
