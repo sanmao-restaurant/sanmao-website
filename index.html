@@ -4,32 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SANMAO - Restaurant</title>
-  <link rel="stylesheet" href="style.css?v=103">
+  <link rel="stylesheet" href="style.css?v=104">
 </head>
 <body>
 
-  <!-- En-tête avec disposition : Logo à gauche | Instagram au centre | Réservation à droite -->
+  <!-- En-tête : Logo à gauche | Réseaux sociaux au centre | Réservation à droite -->
   <header class="top-bar">
     <div class="logo">SANMAO</div>
 
-    <a href="https://www.instagram.com/sanmao.belleville/" target="_blank" class="insta-center" aria-label="Instagram">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-      </svg>
-    </a>
+    <div class="social-center">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/sanmao.belleville/" target="_blank" class="social-icon" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- RED (Xiaohongshu) -->
+      <a href="https://www.xiaohongshu.com/user/profile/5f689a56000000000101f3ac" target="_blank" class="social-icon" aria-label="Xiaohongshu RED">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/>
+        </svg>
+      </a>
+    </div>
 
     <div class="nav-right">
-      <a href="#booking" class="btn-reservation">RÉSERVATION</a>
+      <a href="https://mylightspeed.app/reservation/848e14a9-9a1b-45f6-b007-001f47996bc8/reservation" target="_blank" class="btn-reservation">RÉSERVATION</a>
     </div>
   </header>
 
-  <!-- Conteneur principal : Fond image + carte texte superposée -->
+  <!-- Conteneur principal -->
   <main class="hero-wrapper" id="hero-bg">
     <div class="menu-card">
       <div id="menu-content">
-        <!-- Le texte du menu chargé via script.js s'affiche ici -->
+        <!-- Le menu dynamique s'affiche ici -->
       </div>
     </div>
   </main>
