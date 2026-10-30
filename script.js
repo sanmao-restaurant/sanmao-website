@@ -2,28 +2,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroBg = document.getElementById("hero-bg");
   const menuContent = document.getElementById("menu-content");
 
-  // 1. Gestion dynamique de l'image de fond selon la date du jour
+  // 1. Calcul de la date du jour (MM-DD)
   const today = new Date();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
   const todayFilename = `${month}-${day}.jpg`; // ex: 10-30.jpg
-  const todayImagePath = `photos/${todayFilename}`;
+  const todayImagePath = `./photos/${todayFilename}`;
 
-  const todayImage = new Image();
+  // 2. On applique en priorité la photo du jour
+  heroBg.style.backgroundImage = `url('${todayImagePath}')`;
 
-  todayImage.onload = () => {
-    // Si la photo de la date existe (photos/10-30.jpg)
-    heroBg.style.backgroundImage = `url('${todayImagePath}')`;
-  };
-
-  todayImage.onerror = () => {
-    // En cas d'absence, fallback sur paper-bg.png (et non .jpg)
+  // 3. Si l'image du jour n'existe pas ou échoue, on bascule sur paper-bg.png
+  const imgTester = new Image();
+  imgTester.onerror = () => {
     heroBg.style.backgroundImage = `url('paper-bg.png')`;
   };
+  imgTester.src = todayImagePath;
 
-  todayImage.src = todayImagePath;
-
-  // 2. Chargement du menu JSON
+  // 4. Chargement du menu JSON
   fetch("menu.json")
     .then((response) => response.json())
     .then((data) => {
