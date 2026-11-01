@@ -285,4 +285,38 @@ body {
   .footer-info .separator {
     display: none;
   }
+  /* Responsive Mobile */
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  /* Affichage complet de l'image sur mobile */
+  .hero-wrapper {
+    background-size: contain; /* Affiche l'image en entier sans la rogner */
+    background-color: #fdfbf7; /* Fond beige harmonieux pour combler si besoin */
+    justify-content: center;
+    padding: 85px 15px 50px;
+  }
+
+  .menu-card {
+    width: 90%;
+    max-height: 80vh;
+    padding: 30px 20px 20px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    padding: 10px 15px;
+  }
+
+  .footer-info .separator {
+    display: none;
+  }
 }
