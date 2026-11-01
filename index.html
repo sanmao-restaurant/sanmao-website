@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SANMAO - Restaurant</title>
-  <link rel="stylesheet" href="style.css?v=430">
+  <link rel="stylesheet" href="style.css?v=460">
 </head>
 <body>
 
-  <!-- En-tête : Logo à gauche | Réseaux sociaux au centre | Réservation à droite -->
+  <!-- En-tête -->
   <header class="top-bar">
     <div class="logo">SANMAO三毛</div>
 
     <div class="social-center">
-      <!-- Instagram -->
       <a href="https://www.instagram.com/sanmao.belleville/" target="_blank" class="social-icon" aria-label="Instagram">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -22,7 +21,6 @@
         </svg>
       </a>
 
-      <!-- RED (Xiaohongshu) -->
       <a href="https://www.xiaohongshu.com/user/profile/5f689a56000000000101f3ac" target="_blank" class="social-icon" aria-label="Xiaohongshu RED">
         <img src="photos/red-logo.png" alt="Xiaohongshu RED" class="red-icon" width="22" height="22">
       </a>
@@ -33,22 +31,20 @@
     </div>
   </header>
 
-  <!-- Zone principale avec le bouton MENU au centre -->
+  <!-- Zone principale -->
   <main class="hero-wrapper" id="hero-bg">
     <button id="btn-open-menu" class="btn-menu-center">MENU</button>
   </main>
 
-  <!-- Pop-up Carte Menu (Centrée et masquée par défaut) -->
+  <!-- Pop-up Carte Menu -->
   <div id="menu-modal" class="menu-modal">
     <div class="menu-card">
       <button id="btn-close-menu" class="close-card" aria-label="Fermer le menu">&times;</button>
-      <div id="menu-content">
-        <!-- Le menu dynamique s'affiche ici -->
-      </div>
+      <div id="menu-content"></div>
     </div>
   </div>
 
-  <!-- Pied de page avec les infos du restaurant (Lisibilité augmentée) -->
+  <!-- Pied de page -->
   <footer class="footer-info">
     <span>64 rue Rébeval, 75019 Paris</span>
     <span class="separator">•</span>
@@ -57,6 +53,6 @@
     <span><a href="tel:+33142410165">01 42 41 01 65</a></span>
   </footer>
 
-  <script src="script.js?v=430"></script>
+  <script src="script.js?v=460"></script>
 </body>
 </html>
