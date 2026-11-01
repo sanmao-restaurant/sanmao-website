@@ -81,7 +81,7 @@ body {
   cursor: pointer;
 }
 
-/* Zone principale avec fond d'écran */
+/* Zone principale */
 .hero-wrapper {
   height: 100vh;
   width: 100vw;
@@ -95,7 +95,15 @@ body {
   padding: 90px 5% 50px;
 }
 
-/* Bouton MENU au centre de la page */
+/* Conteneur des 2 boutons centrés */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Boutons MENU et 菜单 : dimensions strictement identiques */
 .btn-menu-center {
   background-color: var(--green);
   color: var(--white);
@@ -104,18 +112,27 @@ body {
   font-size: 13px;
   letter-spacing: 1px;
   border: 1px solid var(--green);
-  padding: 8px 20px;
+  height: 35px;
+  width: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
 }
 
+.btn-menu-center.btn-cn {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
 .btn-menu-center:hover {
   transform: scale(1.03);
 }
 
-/* Modal Pop-Up du Menu */
+/* Modal Pop-Up */
 .menu-modal {
   display: none;
   position: fixed;
@@ -134,7 +151,6 @@ body {
   display: flex;
 }
 
-/* Carte Pop-Up centrée */
 .menu-card {
   position: relative;
   background-color: var(--card-bg);
@@ -173,7 +189,6 @@ body {
   background-color: rgba(1, 71, 39, 0.25);
 }
 
-/* Croix de fermeture */
 .close-card {
   position: absolute;
   top: 10px;
@@ -233,7 +248,6 @@ body {
   font-weight: bold;
 }
 
-/* Note indicative sous le menu */
 .menu-note {
   font-style: italic;
   font-size: 10px;
@@ -243,7 +257,7 @@ body {
   line-height: 1.4;
 }
 
-/* Footer d'informations */
+/* Footer */
 .footer-info {
   position: fixed;
   bottom: 0;
