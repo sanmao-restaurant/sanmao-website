@@ -6,7 +6,7 @@
 
 :root {
   --green: #014727;
-  --card-bg: rgba(253, 251, 247, 0.94);
+  --card-bg: rgba(253, 251, 247, 0.96);
   --white: #ffffff;
 }
 
@@ -19,7 +19,7 @@ body {
   background-color: #fdfbf7;
 }
 
-/* Header (Opacité équilibrée à 35%) */
+/* Header */
 .top-bar {
   position: fixed;
   top: 0;
@@ -58,7 +58,6 @@ body {
   opacity: 0.7;
 }
 
-/* Logo RED : aspect naturel d'origine */
 .red-icon {
   display: block;
   object-fit: contain;
@@ -79,9 +78,10 @@ body {
   padding: 8px 16px;
   border-radius: 4px;
   display: inline-block;
+  cursor: pointer;
 }
 
-/* Zone principale / Arrière-plan */
+/* Zone principale avec fond d'écran */
 .hero-wrapper {
   height: 100vh;
   width: 100vw;
@@ -91,20 +91,60 @@ body {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center; /* Bouton centré au milieu de la page */
   padding: 90px 5% 50px;
 }
 
-/* Carte du Menu */
+/* Bouton MENU au centre de la page (Mêmes proportions & style que RÉSERVATION) */
+.btn-menu-center {
+  background-color: var(--green);
+  color: var(--white);
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border: 1px solid var(--green);
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.btn-menu-center:hover {
+  transform: scale(1.03);
+}
+
+/* Modal Pop-Up du Menu (Centrée au milieu de l'écran) */
+.menu-modal {
+  display: none; /* Masquée par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35); /* Léger assombrissement de l'arrière-plan */
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-modal.active {
+  display: flex; /* S'affiche au clic sur MENU */
+}
+
+/* Carte Pop-Up centrée */
 .menu-card {
+  position: relative;
   background-color: var(--card-bg);
-  padding: 28px 24px;
+  padding: 35px 28px 28px;
   width: 36vw;
   max-width: 440px;
-  min-width: 280px;
-  max-height: calc(80vh - 80px);
+  min-width: 290px;
+  max-height: calc(85vh - 80px);
   overflow-y: auto;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
@@ -131,6 +171,26 @@ body {
 
 .menu-card:hover::-webkit-scrollbar-thumb {
   background-color: rgba(1, 71, 39, 0.25);
+}
+
+/* Bouton Croix de fermeture en haut à droite de la carte */
+.close-card {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--green);
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.close-card:hover {
+  opacity: 1;
 }
 
 .menu-category {
@@ -173,7 +233,7 @@ body {
   font-weight: bold;
 }
 
-/* Footer d'informations en bas de page */
+/* Footer d'informations (Lisibilité renforcée : taille agrandie & texte en gras) */
 .footer-info {
   position: fixed;
   bottom: 0;
@@ -182,23 +242,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   padding: 12px 20px;
-  background-color: rgba(253, 251, 247, 0.35);
+  background-color: rgba(253, 251, 247, 0.45);
   backdrop-filter: blur(5px);
   color: var(--green);
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: bold; /* Texte passé en gras */
+  letter-spacing: 1.2px;
   z-index: 100;
 }
 
 .footer-info a {
   color: var(--green);
   text-decoration: none;
+  font-weight: bold;
 }
 
 .footer-info .separator {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 /* Responsive Mobile */
@@ -209,20 +271,16 @@ body {
   .logo {
     font-size: 18px;
   }
-  .hero-wrapper {
-    justify-content: center;
-    padding: 85px 15px 50px;
-  }
   .menu-card {
-    width: 100%;
-    max-height: calc(80vh - 90px);
-    padding: 20px 16px;
+    width: 90%;
+    max-height: 80vh;
+    padding: 30px 20px 20px;
   }
   .footer-info {
     flex-direction: column;
     gap: 4px;
-    font-size: 10px;
-    padding: 8px 15px;
+    font-size: 11px;
+    padding: 10px 15px;
   }
   .footer-info .separator {
     display: none;
