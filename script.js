@@ -1,25 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
   const heroBg = document.getElementById("hero-bg");
   const menuContent = document.getElementById("menu-content");
+  const menuModal = document.getElementById("menu-modal");
+  const btnOpenMenu = document.getElementById("btn-open-menu");
+  const btnCloseMenu = document.getElementById("btn-close-menu");
 
-  // 1. Calcul de la date du jour (MM-DD)
+  // 1. Photo dynamique par date
   const today = new Date();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
-  const todayFilename = `${month}-${day}.jpg`; // ex: 10-30.jpg
+  const todayFilename = `${month}-${day}.jpg`;
   const todayImagePath = `photos/${todayFilename}`;
 
-  // Application prioritaire de la photo du jour
   heroBg.style.backgroundImage = `url('${todayImagePath}')`;
 
-  // Vérification en arrière-plan : si 10-30.jpg échoue, basculer sur paper-bg.png
   const todayImage = new Image();
   todayImage.onerror = () => {
     heroBg.style.backgroundImage = `url('paper-bg.png')`;
   };
   todayImage.src = todayImagePath;
 
-  // 2. Chargement du menu JSON
+  // 2. Gestion de l'ouverture / fermeture de la pop-up Menu
+  if (btnOpenMenu && menuModal) {
+    btnOpenMenu.addEventListener("click", () => {
+      menuModal.classList.add("active");
+    });
+  }
+
+  if (btnCloseMenu && menuModal) {
+    btnCloseMenu.addEventListener("click", () => {
+      menuModal.classList.remove("active");
+    });
+  }
+
+  // Fermer la modal si on clique en dehors du menu
+  if (menuModal) {
+    menuModal.addEventListener("click", (e) => {
+      if (e.target === menuModal) {
+        menuModal.classList.remove("active");
+      }
+    });
+  }
+
+  // 3. Chargement du menu JSON
   fetch("menu.json")
     .then((response) => response.json())
     .then((data) => {
