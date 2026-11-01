@@ -91,11 +91,11 @@ body {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center; /* Bouton centré au milieu de la page */
+  justify-content: center;
   padding: 90px 5% 50px;
 }
 
-/* Bouton MENU au centre de la page (Mêmes proportions & style que RÉSERVATION) */
+/* Bouton MENU au centre de la page */
 .btn-menu-center {
   background-color: var(--green);
   color: var(--white);
@@ -115,15 +115,15 @@ body {
   transform: scale(1.03);
 }
 
-/* Modal Pop-Up du Menu (Centrée au milieu de l'écran) */
+/* Modal Pop-Up du Menu */
 .menu-modal {
-  display: none; /* Masquée par défaut */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.35); /* Léger assombrissement de l'arrière-plan */
+  background-color: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(4px);
   z-index: 200;
   align-items: center;
@@ -131,7 +131,7 @@ body {
 }
 
 .menu-modal.active {
-  display: flex; /* S'affiche au clic sur MENU */
+  display: flex;
 }
 
 /* Carte Pop-Up centrée */
@@ -173,7 +173,7 @@ body {
   background-color: rgba(1, 71, 39, 0.25);
 }
 
-/* Bouton Croix de fermeture en haut à droite de la carte */
+/* Croix de fermeture */
 .close-card {
   position: absolute;
   top: 10px;
@@ -233,7 +233,7 @@ body {
   font-weight: bold;
 }
 
-/* Footer d'informations (Lisibilité renforcée : taille agrandie & texte en gras) */
+/* Footer d'informations */
 .footer-info {
   position: fixed;
   bottom: 0;
@@ -244,79 +244,4 @@ body {
   align-items: center;
   gap: 15px;
   padding: 12px 20px;
-  background-color: rgba(253, 251, 247, 0.45);
-  backdrop-filter: blur(5px);
-  color: var(--green);
-  font-size: 12px;
-  font-weight: bold; /* Texte passé en gras */
-  letter-spacing: 1.2px;
-  z-index: 100;
-}
-
-.footer-info a {
-  color: var(--green);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.footer-info .separator {
-  opacity: 0.7;
-}
-
-/* Responsive Mobile */
-@media (max-width: 768px) {
-  .top-bar {
-    padding: 15px 20px;
-  }
-  .logo {
-    font-size: 18px;
-  }
-  .menu-card {
-    width: 90%;
-    max-height: 80vh;
-    padding: 30px 20px 20px;
-  }
-  .footer-info {
-    flex-direction: column;
-    gap: 4px;
-    font-size: 11px;
-    padding: 10px 15px;
-  }
-  .footer-info .separator {
-    display: none;
-  }
-  /* Responsive Mobile */
-@media (max-width: 768px) {
-  .top-bar {
-    padding: 15px 20px;
-  }
-
-  .logo {
-    font-size: 18px;
-  }
-
-  /* Affichage complet de l'image sur mobile */
-  .hero-wrapper {
-    background-size: contain; /* Affiche l'image en entier sans la rogner */
-    background-color: #fdfbf7; /* Fond beige harmonieux pour combler si besoin */
-    justify-content: center;
-    padding: 85px 15px 50px;
-  }
-
-  .menu-card {
-    width: 90%;
-    max-height: 80vh;
-    padding: 30px 20px 20px;
-  }
-
-  .footer-info {
-    flex-direction: column;
-    gap: 4px;
-    font-size: 11px;
-    padding: 10px 15px;
-  }
-
-  .footer-info .separator {
-    display: none;
-  }
-}
+  background-color
