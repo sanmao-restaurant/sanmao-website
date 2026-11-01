@@ -30,10 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. Gestion ouverture/fermeture Pop-up FR
   if (btnOpenMenu && menuModal) {
-    btnOpenMenu.addEventListener("click", () => menuModal.classList.add("active"));
+    btnOpenMenu.addEventListener("click", () => {
+      menuModal.classList.add("active");
+    });
   }
   if (btnCloseMenu && menuModal) {
-    btnCloseMenu.addEventListener("click", () => menuModal.classList.remove("active"));
+    btnCloseMenu.addEventListener("click", () => {
+      menuModal.classList.remove("active");
+    });
   }
   if (menuModal) {
     menuModal.addEventListener("click", (e) => {
@@ -43,10 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Gestion ouverture/fermeture Pop-up CN
   if (btnOpenMenuCn && menuModalCn) {
-    btnOpenMenuCn.addEventListener("click", () => menuModalCn.classList.add("active"));
+    btnOpenMenuCn.addEventListener("click", () => {
+      menuModalCn.classList.add("active");
+    });
   }
   if (btnCloseMenuCn && menuModalCn) {
-    btnCloseMenuCn.addEventListener("click", () => menuModalCn.classList.remove("active"));
+    btnCloseMenuCn.addEventListener("click", () => {
+      menuModalCn.classList.remove("active");
+    });
   }
   if (menuModalCn) {
     menuModalCn.addEventListener("click", (e) => {
@@ -68,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fonction générique pour afficher le menu
   function renderMenu(data, targetContainer, noteText) {
-    if (!data.categories || !targetContainer) return;
+    if (!data || !data.categories || !targetContainer) return;
 
     let html = "";
     data.categories.forEach((cat) => {
