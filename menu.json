@@ -8,18 +8,18 @@
         {"title": "Oeuf pudding aux palourdes", "price": "12"},
         {"title": "Champignons sauvages à l'huile bouillante", "price": "14"},
         {"title": "Fuzhu et céleri en salade", "price": "9"},
+        {"title": "Crevettes frites, feuilles de menthe", "price": "12"},
+        {"title": "Sauté Zigong", "price": "16"},
+        {"title": "Légumes de saison", "price": "11"},
         {"title": "Riz fermier", "price": "3"}
       ]
     },
     {
       "name": "GRANDES ASSIETTES",
       "items": [
-        {"title": "Crevette fries, feuilles de menthe", "price": "12"},
-        {"title": "Sauté Zigong", "price": "16"},
         {"title": "Lapin grillé à l'ail", "price": "22"},
         {"title": "Porc ribs feuilles de moutarde fermentées", "price": "26"},
-        {"title": "Daurade pickles d'habanada et jeune gingembre", "price": "23"},
-        {"title": "Legumes de saison", "price": "11"}
+        {"title": "Daurade pickles d'habanada et jeune gingembre", "price": "23"}
       ]
     },
     {
