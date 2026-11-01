@@ -3,43 +3,41 @@
     {
       "name": "PETITES ASSIETTES",
       "items": [
-        {"title": "Concombre mariné", "price": "8"},
-        {"title": "Chou chinois, vinaigre noir", "price": "9"},
-        {"title": "Tofu froid, sauce sésame", "price": "10"},
-        {"title": "Œuf century", "price": "11"}
+        {"title": "Tête de porc fumée", "price": "7"},
+        {"title": "St Jacques aux oreilles d'argent", "price": "11"},
+        {"title": "Oeuf pudding aux palourdes", "price": "12"},
+        {"title": "Champignons sauvages à l'huile bouillante", "price": "14"},
+        {"title": "Fuzhu et céleri en salade", "price": "9"},
+        {"title": "Riz fermier", "price": "3"}
       ]
     },
     {
-      "name": "RAVIOLIS MAISON",
+      "name": "GRANDES ASSIETTES",
       "items": [
-        {"title": "Porc & ciboulette (6 pièces)", "price": "12"},
-        {"title": "Crevette & bambou (6 pièces)", "price": "13"},
-        {"title": "Légumes de saison (6 pièces)", "price": "11"}
-      ]
-    },
-    {
-      "name": "GRANDS PLATS",
-      "items": [
-        {"title": "Poulet kung pao", "price": "16"},
-        {"title": "Bœuf au poivre noir", "price": "18"},
-        {"title": "Aubergine sichuanaise", "price": "15"},
-        {"title": "Riz cantonais", "price": "8"}
+        {"title": "Crevette fries, feuilles de menthe", "price": "12"},
+        {"title": "Sauté Zigong", "price": "16"},
+        {"title": "Lapin grillé à l'ail", "price": "22"},
+        {"title": "Porc ribs feuilles de moutarde fermentées", "price": "26"},
+        {"title": "Daurade pickles d'habanada et jeune gingembre", "price": "23"},
+        {"title": "Legumes de saison", "price": "11"}
       ]
     },
     {
       "name": "DESSERTS",
       "items": [
-        {"title": "Crème de sésame noir", "price": "7"},
-        {"title": "Perles de coco, gingembre", "price": "7"}
+        {"title": "Bonbons “白兔” et fruits de saison", "price": "8"}
       ]
     },
     {
       "name": "BOISSONS",
       "items": [
-        {"title": "Thé vert jasmin", "price": "4"},
-        {"title": "Bière chinoise", "price": "6"},
-        {"title": "Vin nature", "price": "9"},
-        {"title": "Baijiu", "price": "8"}
+        {"title": "Bière française", "price": "4.5/6"},
+        {"title": "Bière chinoise", "price": "4.5/6"},
+        {"title": "Verre de vin", "price": "6/7"},
+        {"title": "Fenjiu", "price": "6/18/48"},
+        {"title": "Moutai", "price": "10/30/88"},
+        {"title": "LuZhou Laojiao", "price": "18"},
+        {"title": "Sodas", "price": "5"},
       ]
     }
   ]
