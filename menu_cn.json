@@ -1,7 +1,7 @@
 {
   "categories": [
     {
-      "name": "小",
+      "name": "PETITES ASSIETTES (小)",
       "items": [
         { "title": "烟熏猪脸", "price": "7" },
         { "title": "扇贝凉拌银耳", "price": "11" },
@@ -10,12 +10,12 @@
         { "title": "芹菜凉拌腐竹", "price": "9" },
         { "title": "花椒薄荷虾", "price": "12" },
         { "title": "自贡爆炒", "price": "16" },
-         { "title": "蒜蓉时蔬", "price": "11" }，
+        { "title": "蒜蓉时蔬", "price": "11" },
         { "title": "农家大米", "price": "3" }
       ]
     },
     {
-      "name": "大",
+      "name": "GRANDES ASSIETTES (大)",
       "items": [
         { "title": "手撕烤兔", "price": "22" },
         { "title": "芽菜排骨", "price": "26" },
@@ -23,13 +23,13 @@
       ]
     },
     {
-      "name": "甜品",
+      "name": "DESSERTS (甜品)",
       "items": [
         { "title": "水果拼盘白兔糖", "price": "8" }
       ]
     },
     {
-      "name": "酒水饮料",
+      "name": "BOISSONS (酒水饮料)",
       "items": [
         { "title": "法国啤酒", "price": "4.5/6" },
         { "title": "中国啤酒", "price": "4.5/6" },
