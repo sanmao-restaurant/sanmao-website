@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SANMAO - Restaurant</title>
-  <link rel="stylesheet" href="style.css?v=162">
+  <link rel="stylesheet" href="style.css?v=130">
 </head>
 <body>
 
@@ -33,24 +33,30 @@
     </div>
   </header>
 
-  <!-- Conteneur principal -->
+  <!-- Zone principale avec le bouton MENU au centre -->
   <main class="hero-wrapper" id="hero-bg">
+    <button id="btn-open-menu" class="btn-menu-center">MENU</button>
+  </main>
+
+  <!-- Pop-up Carte Menu (Centrée et masquée par défaut) -->
+  <div id="menu-modal" class="menu-modal">
     <div class="menu-card">
+      <button id="btn-close-menu" class="close-card" aria-label="Fermer le menu">&times;</button>
       <div id="menu-content">
         <!-- Le menu dynamique s'affiche ici -->
       </div>
     </div>
-  </main>
+  </div>
 
-  <!-- Pied de page avec les infos du restaurant -->
+  <!-- Pied de page avec les infos du restaurant (Lisibilité augmentée) -->
   <footer class="footer-info">
     <span>64 rue Rébeval, 75019 Paris</span>
     <span class="separator">•</span>
-    <span>Mar - Sam : 19h00 - 00h00</span>
+    <span>Mar - Dim : 19h00 - 00h00</span>
     <span class="separator">•</span>
-    <span><a href="tel:+33100000000">01 42 41 01 65</a></span>
+    <span><a href="tel:+33142410165">01 42 41 01 65</a></span>
   </footer>
 
-  <script src="script.js?v=120"></script>
+  <script src="script.js?v=130"></script>
 </body>
 </html>
