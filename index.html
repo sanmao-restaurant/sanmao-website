@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SANMAO - Restaurant</title>
-  <link rel="stylesheet" href="style.css?v=460">
+  <link rel="stylesheet" href="style.css?v=170">
 </head>
 <body>
 
@@ -31,16 +31,27 @@
     </div>
   </header>
 
-  <!-- Zone principale -->
+  <!-- Zone principale : 2 boutons au centre (MENU et 菜单) -->
   <main class="hero-wrapper" id="hero-bg">
-    <button id="btn-open-menu" class="btn-menu-center">MENU</button>
+    <div class="btn-container">
+      <button id="btn-open-menu" class="btn-menu-center">MENU</button>
+      <button id="btn-open-menu-cn" class="btn-menu-center">菜单</button>
+    </div>
   </main>
 
-  <!-- Pop-up Carte Menu -->
+  <!-- Pop-up Menu FR -->
   <div id="menu-modal" class="menu-modal">
     <div class="menu-card">
       <button id="btn-close-menu" class="close-card" aria-label="Fermer le menu">&times;</button>
       <div id="menu-content"></div>
+    </div>
+  </div>
+
+  <!-- Pop-up Menu CN -->
+  <div id="menu-modal-cn" class="menu-modal">
+    <div class="menu-card">
+      <button id="btn-close-menu-cn" class="close-card" aria-label="Fermer le menu">&times;</button>
+      <div id="menu-content-cn"></div>
     </div>
   </div>
 
@@ -53,6 +64,6 @@
     <span><a href="tel:+33142410165">01 42 41 01 65</a></span>
   </footer>
 
-  <script src="script.js?v=460"></script>
+  <script src="script.js?v=170"></script>
 </body>
 </html>
