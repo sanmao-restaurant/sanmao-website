@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   todayImage.src = todayImagePath;
 
-  // 2. Gestion de l'ouverture / fermeture de la pop-up Menu
+  // 2. Gestion ouverture/fermeture Modal Menu
   if (btnOpenMenu && menuModal) {
     btnOpenMenu.addEventListener("click", () => {
       menuModal.classList.add("active");
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Fermer la modal si on clique en dehors du menu
   if (menuModal) {
     menuModal.addEventListener("click", (e) => {
       if (e.target === menuModal) {
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Chargement du menu JSON
+  // 3. Chargement et affichage du menu JSON
   fetch("menu.json")
     .then((response) => response.json())
     .then((data) => {
@@ -74,6 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       html += `</ul></div>`;
     });
+
+    // Phrase indicative en bas de menu
+    html += `
+      <p class="menu-note">
+        La carte évolue régulièrement au fil des arrivages et des saisons.
+      </p>
+    `;
 
     menuContent.innerHTML = html;
   }
