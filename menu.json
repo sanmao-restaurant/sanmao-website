@@ -3,11 +3,11 @@
     {
       "name": "PETITES ASSIETTES",
       "items": [
-        {"title": "Tête de porc fumée", "price": "8"},
-        {"title": "St Jacques aux oreilles d'argent", "price": "11"},
+        {"title": "Tête de porc fumée", "price": "7"},
+        {"title": "St Jacques aux oreilles d'argent", "price": "14"},
         {"title": "Oeuf vapeur aux palourdes", "price": "12"},
         {"title": "Champignons sauvages à l'huile bouillante", "price": "14"},
-        {"title": "Fuzhu et céleri en salade", "price": "9"},
+        {"title": "Fuzhu et céleri en salade", "price": "8"},
         {"title": "Crevettes frites, feuilles de menthe", "price": "12"},
         {"title": "Sauté Zigong", "price": "16"},
         {"title": "Légumes de saison", "price": "11"},
@@ -25,19 +25,19 @@
     {
       "name": "DESSERT",
       "items": [
-        {"title": "Bonbons “白兔” et fruits de saison", "price": "8"}
+        {"title": "Bonbons “白兔” et fruits de saison", "price": "6"}
       ]
     },
     {
       "name": "BOISSONS",
       "items": [
-        {"title": "Bière française", "price": "4.5/6"},
-        {"title": "Bière chinoise", "price": "4.5/6"},
-        {"title": "Verre de vin", "price": "6/7"},
-        {"title": "Fenjiu", "price": "6/18/48"},
-        {"title": "Moutai", "price": "10/30/88"},
-        {"title": "LuZhou Laojiao", "price": "18"},
-        {"title": "Sodas", "price": "5"}
+        {"title": "Bière française", "price": "4.5/7"},
+        {"title": "Bière chinoise", "price": "4.5/7"},
+        {"title": "Verre de vin", "price": "5/6"},
+        {"title": "Fenjiu", "price": "17/40"},
+        {"title": "Moutai", "price": "88/288"},
+        {"title": "LuZhou Laojiao", "price": "16"},
+        {"title": "Sodas", "price": "4.5/5"}
       ]
     }
   ]
