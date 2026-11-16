@@ -149,7 +149,7 @@ body {
 .menu-card {
   position: relative;
   background-color: var(--card-bg);
-  padding: 35px 28px 28px;
+  padding: 28px 28px 26px;
   width: 40vw;
   max-width: 500px;
   min-width: 300px;
@@ -203,24 +203,24 @@ body {
   opacity: 1;
 }
 
-/* En-tête illustré de la carte À MANGER (proportions fidèles à la carte papier) */
+/* En-tête illustré de la carte À MANGER */
 .menu-logos-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
-  margin-bottom: 26px;
+  margin-top: 2px;
+  margin-bottom: 12px;
   padding: 0 2px;
 }
 
 .logo-lapin {
-  height: 64px;
+  height: 60px;
   width: auto;
   display: block;
 }
 
 .logo-sanmao-stamp {
-  width: 140px;
+  width: 135px;
   height: auto;
   display: block;
 }
@@ -337,15 +337,19 @@ body {
   .menu-card {
     width: 92%;
     max-height: 80vh;
-    padding: 30px 18px 20px;
+    padding: 26px 18px 20px;
+  }
+
+  .menu-logos-header {
+    margin-bottom: 10px;
   }
 
   .logo-lapin {
-    height: 52px;
+    height: 48px;
   }
 
   .logo-sanmao-stamp {
-    width: 112px;
+    width: 108px;
   }
 
   .footer-info {
