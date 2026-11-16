@@ -1,43 +1,32 @@
 {
   "categories": [
     {
-      "name": "PETITES ASSIETTES",
+      "name": "Groupe 1",
       "items": [
-        {"title": "Tête de porc fumée", "price": "7"},
-        {"title": "St Jacques aux oreilles d'argent", "price": "15"},
-        {"title": "Oeuf vapeur aux palourdes", "price": "12"},
-        {"title": "Champignons sauvages à l'huile bouillante", "price": "14"},
-        {"title": "Fuzhu et céleri en salade", "price": "8"},
-        {"title": "Crevettes frites, feuilles de menthe", "price": "12"},
-        {"title": "Sauté Zigong", "price": "16"},
-        {"title": "Légumes de saison", "price": "11"},
-        {"title": "Riz fermier", "price": "3"}
+        { "title": "Foie de lapin au thé / 茶香兔子肝", "price": "6" },
+        { "title": "Tête de porc fumée / 烟熏猪脸", "price": "9" },
+        { "title": "St Jacques aux oreilles d'argent / 扇贝凉拌银耳", "price": "15" },
+        { "title": "Crevettes frites feuilles de menthe / 花椒薄荷虾", "price": "13" },
+        { "title": "Oeuf vapeur aux palourdes / 蛤蜊蒸蛋", "price": "12" },
+        { "title": "Champignons sauvages à l'huile bouillante / 法式鸡纵油", "price": "16" },
+        { "title": "Céleri et fuzhu en salade / 芹菜腐竹", "price": "8" },
+        { "title": "Sauté Zigong / 自贡爆炒", "price": "18" },
+        { "title": "Légumes de saison / 蒜蓉时蔬", "price": "12" },
+        { "title": "Riz fermier / 农家大米", "price": "3" }
       ]
     },
     {
-      "name": "GRANDES ASSIETTES",
+      "name": "Groupe 2",
       "items": [
-        {"title": "Lapin grillé à l'ail", "price": "22"},
-        {"title": "Porc ribs feuilles de moutarde fermentées", "price": "26"},
-        {"title": "Daurade pickles d'habanada et jeune gingembre", "price": "23"}
+        { "title": "Lapin grillé à l'ail / 手撕烤兔", "price": "23" },
+        { "title": "Porc ribs feuilles de moutarde fermentées / 盐酸排骨", "price": "27" },
+        { "title": "Loup de mer pickles d'habanada / 跳水鱼", "price": "24" }
       ]
     },
     {
-      "name": "DESSERT",
+      "name": "Groupe 3",
       "items": [
-        {"title": "Bonbons “白兔” et fruits de saison", "price": "6"}
-      ]
-    },
-    {
-      "name": "BOISSONS",
-      "items": [
-        {"title": "Bière française", "price": "4.5/7"},
-        {"title": "Bière chinoise", "price": "4.5/7"},
-        {"title": "Verre de vin", "price": "5/6"},
-        {"title": "Fenjiu", "price": "17/40"},
-        {"title": "Moutai", "price": "88/288"},
-        {"title": "Zisha daqu", "price": "16"},
-        {"title": "Softs", "price": "4.5/5"}
+        { "title": "Bonbons et fruits de saison / 水果拼盘白兔糖", "price": "8" }
       ]
     }
   ]
