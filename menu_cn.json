@@ -36,10 +36,10 @@
       "items": [
         { "title": "一小杯 Shot", "price": "1" },
         { "title": "紫砂大曲 Zisha Daqu (100ml)", "price": "16" },
-        { "title": "国窖1573 Guojiao 1573 (100/500ml)", "price": "40/168" },
         { "title": "汾酒10年 Fenjiu 10ans (100/500ml)", "price": "17/68" },
         { "title": "汾酒20年 Fenjiu 20ans (100/500ml)", "price": "21/86" },
         { "title": "汾酒30年 Fenjiu 30ans (100/500ml)", "price": "26/118" },
+        { "title": "国窖1573 Guojiao 1573 (100/500ml)", "price": "40/168" },
         { "title": "茅台王子 Moutai Prince (500ml)", "price": "108" },
         { "title": "茅台迷你 Moutai Mini (50ml)", "price": "88" },
         { "title": "茅台2025 Moutai 2025 (500ml)", "price": "288" }
