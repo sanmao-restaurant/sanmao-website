@@ -1,21 +1,32 @@
 {
   "categories": [
     {
-      "name": "BIÈRES CHINOISES / 啤酒(中国)",
+      "name": "软饮 / SOFTS",
       "items": [
-        { "title": "Tsingtao 青岛 (64cl)", "price": "8" },
-        { "title": "Xuehua 雪花 (33cl)", "price": "4,5" }
+        { "title": "王老吉 WaLoVi (31cl)", "price": "5" },
+        { "title": "椰奶 Lait de Coco (24,5cl)", "price": "5" },
+        { "title": "韩国葡萄汁 Jus de raisin Coréen (23,8cl)", "price": "5" },
+        { "title": "可乐 UMA Cola UMA (33cl)", "price": "5" },
+        { "title": "无酒精啤酒 IPA soda UMA (33cl)", "price": "6" },
+        { "title": "苹果汁 Jus de pomme trouble (25cl)", "price": "6" }
       ]
     },
     {
-      "name": "BIÈRES FRANÇAISES / 啤酒(法国)",
+      "name": "啤酒(中国) / BIÈRES CHINOISES",
+      "items": [
+        { "title": "青岛 Tsingtao (64cl)", "price": "8" },
+        { "title": "雪花 Xuehua (33cl)", "price": "4,5" }
+      ]
+    },
+    {
+      "name": "啤酒(法国) / BIÈRES FRANÇAISES",
       "items": [
         { "title": "Sacré Cœur (33/50cl)", "price": "4,5/7" },
         { "title": "Delicata (33/50cl)", "price": "4,5/7" }
       ]
     },
     {
-      "name": "VINS ROUGES / 葡萄酒(红)",
+      "name": "葡萄酒(红) / VINS ROUGES",
       "items": [
         { "title": "Capitalisme Rouge 杯/瓶 (verre/75cl)", "price": "5/25" },
         { "title": "Cœur Grenadine 杯/瓶 (verre/75cl)", "price": "6/27" },
@@ -24,7 +35,7 @@
       ]
     },
     {
-      "name": "VINS BLANCS / 葡萄酒(白)",
+      "name": "葡萄酒(白) / VINS BLANCS",
       "items": [
         { "title": "Rue de la soif 杯/瓶 (verre/75cl)", "price": "6/27" },
         { "title": "Alsace 2024 杯/瓶 (verre/75cl)", "price": "6/27" },
@@ -32,28 +43,17 @@
       ]
     },
     {
-      "name": "BAIJIU / 白酒",
+      "name": "白酒 / BAIJIU",
       "items": [
-        { "title": "Shot 一小杯", "price": "1" },
-        { "title": "Zisha Daqu 紫砂大曲 (100ml)", "price": "16" },
-        { "title": "Guojiao 1573 国窖1573 (100ml/500ml)", "price": "40/168" },
-        { "title": "Fenjiu 10ans 汾酒10年 (100ml/500ml)", "price": "17/68" },
-        { "title": "Fenjiu 20ans 汾酒20年 (100ml/500ml)", "price": "21/86" },
-        { "title": "Fenjiu 30ans 汾酒30年 (100ml/500ml)", "price": "26/118" },
-        { "title": "Moutai Prince 茅台王子 (500ml)", "price": "108" },
-        { "title": "Moutai Mini 茅台迷你 (50ml)", "price": "88" },
-        { "title": "Moutai 2025 茅台2025 (500ml)", "price": "288" }
-      ]
-    },
-    {
-      "name": "SOFTS / 软饮",
-      "items": [
-        { "title": "WaLoVi 王老吉 (31cl)", "price": "5" },
-        { "title": "Lait de Coco 椰奶 (24,5cl)", "price": "5" },
-        { "title": "Cola 可乐 (33cl)", "price": "5" },
-        { "title": "Jus de raisin Coréen 韩国葡萄汁 (23,8cl)", "price": "5" },
-        { "title": "Jus de pomme trouble 苹果汁 (25cl)", "price": "6" },
-        { "title": "IPA soda UMA 无酒精啤酒 (33cl)", "price": "6" }
+        { "title": "一小杯 Shot", "price": "1" },
+        { "title": "紫砂大曲 Zisha Daqu (100ml)", "price": "16" },
+        { "title": "国窖1573 Guojiao 1573 (100/500ml)", "price": "40/168" },
+        { "title": "汾酒10年 Fenjiu 10ans (100/500ml)", "price": "17/68" },
+        { "title": "汾酒20年 Fenjiu 20ans (100/500ml)", "price": "21/86" },
+        { "title": "汾酒30年 Fenjiu 30ans (100/500ml)", "price": "26/118" },
+        { "title": "茅台王子 Moutai Prince (500ml)", "price": "108" },
+        { "title": "茅台迷你 Moutai Mini (50ml)", "price": "88" },
+        { "title": "茅台2025 Moutai 2025 (500ml)", "price": "288" }
       ]
     }
   ]
