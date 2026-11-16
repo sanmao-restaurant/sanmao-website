@@ -31,10 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const imageData = ctx.getImageData(0, 0, w, h);
       const data = imageData.data;
 
-      // Couleur du fond crème échantillonnée dans le coin supérieur gauche
-      const bgR = data[0];
-      const bgG = data[1];
-      const bgB = data[2];
+      // Couleur du fond crème échantillonnée près du coin supérieur gauche
+      const sampleOffset = (15 * w + 15) * 4;
+      const bgR = data[sampleOffset] || data[0];
+      const bgG = data[sampleOffset + 1] || data[1];
+      const bgB = data[sampleOffset + 2] || data[2];
 
       let minX = w, minY = h, maxX = 0, maxY = 0;
       let hasInk = false;
@@ -42,6 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let y = 0; y < h; y++) {
         for (let x = 0; x < w; x++) {
           const i = (y * w + x) * 4;
+
+          // Effacer les bordures extérieures (supprime la ligne verticale à droite)
+          if (x < 12 || x >= w - 12 || y < 12 || y >= h - 12) {
+            data[i + 3] = 0;
+            continue;
+          }
+
           const r = data[i];
           const g = data[i + 1];
           const b = data[i + 2];
@@ -52,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
             (b - bgB) * (b - bgB)
           );
 
-          if (dist < 30) {
+          if (dist < 34) {
             data[i + 3] = 0; // Fond totalement transparent
-          } else if (dist < 62) {
-            data[i + 3] = Math.round(((dist - 30) / 32) * 255); // Bord doux
+          } else if (dist < 66) {
+            data[i + 3] = Math.round(((dist - 34) / 32) * 255); // Bord doux
           }
 
           if (data[i + 3] > 20) {
