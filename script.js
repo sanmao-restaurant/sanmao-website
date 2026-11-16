@@ -13,7 +13,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnOpenMenuCn = document.getElementById("btn-open-menu-cn");
   const btnCloseMenuCn = document.getElementById("btn-close-menu-cn");
 
-  // 1. Détourage automatique du fond crème et recadrage des logos
+  // 1. Alignement forcé des logos (sanmao centré avec le lapin)
+  const logosHeader = document.querySelector(".menu-logos-header");
+  const logoLapin = document.getElementById("logo-lapin");
+  const logoSanmao = document.getElementById("logo-sanmao-stamp");
+
+  if (logosHeader) {
+    logosHeader.querySelectorAll("br").forEach((br) => br.remove());
+    logosHeader.style.display = "flex";
+    logosHeader.style.justifyContent = "space-between";
+    logosHeader.style.alignItems = "center";
+    logosHeader.style.marginTop = "2px";
+    logosHeader.style.marginBottom = "14px";
+  }
+
+  function appliquerTaillesLogos() {
+    const isMobile = window.innerWidth <= 768;
+    if (logoLapin) {
+      logoLapin.style.height = isMobile ? "50px" : "62px";
+      logoLapin.style.width = "auto";
+      logoLapin.style.margin = "0";
+      logoLapin.style.display = "block";
+    }
+    if (logoSanmao) {
+      logoSanmao.style.width = isMobile ? "110px" : "138px";
+      logoSanmao.style.height = "auto";
+      logoSanmao.style.margin = "0";
+      logoSanmao.style.display = "block";
+    }
+  }
+
+  appliquerTaillesLogos();
+  window.addEventListener("resize", appliquerTaillesLogos);
+
+  // 2. Détourage automatique du fond crème et recadrage des logos
   function detourerEtRecadrer(imgElement) {
     if (!imgElement) return;
 
@@ -31,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const imageData = ctx.getImageData(0, 0, w, h);
       const data = imageData.data;
 
-      // Couleur du fond crème échantillonnée près du coin supérieur gauche
       const sampleOffset = (15 * w + 15) * 4;
       const bgR = data[sampleOffset] || data[0];
       const bgG = data[sampleOffset + 1] || data[1];
@@ -44,8 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let x = 0; x < w; x++) {
           const i = (y * w + x) * 4;
 
-          // Effacer les bordures extérieures (supprime la ligne verticale à droite)
-          if (x < 12 || x >= w - 12 || y < 12 || y >= h - 12) {
+          if (x < 14 || x >= w - 14 || y < 14 || y >= h - 14) {
             data[i + 3] = 0;
             continue;
           }
@@ -61,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
           if (dist < 34) {
-            data[i + 3] = 0; // Fond totalement transparent
+            data[i + 3] = 0;
           } else if (dist < 66) {
-            data[i + 3] = Math.round(((dist - 34) / 32) * 255); // Bord doux
+            data[i + 3] = Math.round(((dist - 34) / 32) * 255);
           }
 
           if (data[i + 3] > 20) {
@@ -99,10 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  detourerEtRecadrer(document.getElementById("logo-lapin"));
-  detourerEtRecadrer(document.getElementById("logo-sanmao-stamp"));
+  detourerEtRecadrer(logoLapin);
+  detourerEtRecadrer(logoSanmao);
 
-  // 2. Photo du jour
+  // 3. Photo du jour
   const today = new Date();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
@@ -117,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   todayImage.src = todayImagePath;
 
-  // 3. Modale À MANGER
+  // 4. Modale À MANGER
   if (btnOpenMenu && menuModal) {
     btnOpenMenu.addEventListener("click", () => menuModal.classList.add("active"));
   }
@@ -130,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 4. Modale À BOIRE
+  // 5. Modale À BOIRE
   if (btnOpenMenuCn && menuModalCn) {
     btnOpenMenuCn.addEventListener("click", () => menuModalCn.classList.add("active"));
   }
@@ -145,7 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cacheBuster = new Date().getTime();
 
-  // Fonction de lecture JSON sécurisée (tolère les virgules en trop)
   function fetchSafeJson(filename) {
     return fetch(`${filename}?v=${cacheBuster}`)
       .then((res) => {
@@ -158,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // 5. Chargement À MANGER (sans en-têtes : false)
+  // 6. Chargement À MANGER (sans en-têtes : false)
   fetchSafeJson("menu.json")
     .then((data) => renderMenu(
       data, 
@@ -171,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (menuContent) menuContent.innerHTML = `<p style="text-align:center;">Carte indisponible.<br><small style="opacity:0.6;">${err.message}</small></p>`;
     });
 
-  // 6. Chargement À BOIRE (avec en-têtes : true)
+  // 7. Chargement À BOIRE (avec en-têtes : true)
   fetchSafeJson("menu_cn.json")
     .then((data) => renderMenu(
       data, 
@@ -207,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
       html += `</ul></div>`;
     });
 
-    html += `<p class="menu-note">${noteText}</p>`;
+    html += `<p class="menu-note" style="margin-top: 44px;">${noteText}</p>`;
     targetContainer.innerHTML = html;
   }
 });
