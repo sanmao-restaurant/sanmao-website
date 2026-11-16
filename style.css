@@ -149,7 +149,7 @@ body {
 .menu-card {
   position: relative;
   background-color: var(--card-bg);
-  padding: 28px 28px 26px;
+  padding: 28px 28px 28px;
   width: 40vw;
   max-width: 500px;
   min-width: 300px;
@@ -203,27 +203,26 @@ body {
   opacity: 1;
 }
 
-/* En-tête illustré de la carte À MANGER (aligné sur la base du lapin) */
+/* En-tête illustré de la carte À MANGER (aligné au centre du lapin) */
 .menu-logos-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-top: 2px;
   margin-bottom: 14px;
   padding: 0 2px;
 }
 
 .logo-lapin {
-  height: 60px;
+  height: 62px;
   width: auto;
   display: block;
 }
 
 .logo-sanmao-stamp {
-  width: 135px;
+  width: 138px;
   height: auto;
   display: block;
-  margin-bottom: 2px;
 }
 
 /* Espacement entre chaque bloc de catégorie */
@@ -279,7 +278,7 @@ body {
   font-style: italic;
   font-size: 10px;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 44px;
   opacity: 0.75;
   line-height: 1.5;
 }
@@ -338,7 +337,7 @@ body {
   .menu-card {
     width: 92%;
     max-height: 80vh;
-    padding: 26px 18px 20px;
+    padding: 26px 18px 22px;
   }
 
   .menu-logos-header {
@@ -346,12 +345,11 @@ body {
   }
 
   .logo-lapin {
-    height: 48px;
+    height: 50px;
   }
 
   .logo-sanmao-stamp {
-    width: 108px;
-    margin-bottom: 2px;
+    width: 110px;
   }
 
   .footer-info {
