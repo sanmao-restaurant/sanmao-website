@@ -13,7 +13,88 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnOpenMenuCn = document.getElementById("btn-open-menu-cn");
   const btnCloseMenuCn = document.getElementById("btn-close-menu-cn");
 
-  // 1. Photo du jour
+  // 1. Détourage automatique du fond crème et recadrage des logos
+  function detourerEtRecadrer(imgElement) {
+    if (!imgElement) return;
+
+    const processImage = () => {
+      if (!imgElement.naturalWidth || imgElement.dataset.processed === "true") return;
+
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      const w = imgElement.naturalWidth;
+      const h = imgElement.naturalHeight;
+      canvas.width = w;
+      canvas.height = h;
+      ctx.drawImage(imgElement, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, w, h);
+      const data = imageData.data;
+
+      // Couleur du fond crème échantillonnée dans le coin supérieur gauche
+      const bgR = data[0];
+      const bgG = data[1];
+      const bgB = data[2];
+
+      let minX = w, minY = h, maxX = 0, maxY = 0;
+      let hasInk = false;
+
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          const i = (y * w + x) * 4;
+          const r = data[i];
+          const g = data[i + 1];
+          const b = data[i + 2];
+
+          const dist = Math.sqrt(
+            (r - bgR) * (r - bgR) +
+            (g - bgG) * (g - bgG) +
+            (b - bgB) * (b - bgB)
+          );
+
+          if (dist < 30) {
+            data[i + 3] = 0; // Fond totalement transparent
+          } else if (dist < 62) {
+            data[i + 3] = Math.round(((dist - 30) / 32) * 255); // Bord doux
+          }
+
+          if (data[i + 3] > 20) {
+            hasInk = true;
+            if (x < minX) minX = x;
+            if (x > maxX) maxX = x;
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
+          }
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+
+      if (hasInk && maxX > minX && maxY > minY) {
+        const cropW = maxX - minX + 1;
+        const cropH = maxY - minY + 1;
+        const cropCanvas = document.createElement("canvas");
+        cropCanvas.width = cropW;
+        cropCanvas.height = cropH;
+        const cropCtx = cropCanvas.getContext("2d");
+        cropCtx.drawImage(canvas, minX, minY, cropW, cropH, 0, 0, cropW, cropH);
+
+        imgElement.dataset.processed = "true";
+        imgElement.src = cropCanvas.toDataURL("image/png");
+      }
+    };
+
+    if (imgElement.complete) {
+      processImage();
+    } else {
+      imgElement.addEventListener("load", processImage);
+    }
+  }
+
+  detourerEtRecadrer(document.getElementById("logo-lapin"));
+  detourerEtRecadrer(document.getElementById("logo-sanmao-stamp"));
+
+  // 2. Photo du jour
   const today = new Date();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
@@ -28,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   todayImage.src = todayImagePath;
 
-  // 2. Modale À MANGER
+  // 3. Modale À MANGER
   if (btnOpenMenu && menuModal) {
     btnOpenMenu.addEventListener("click", () => menuModal.classList.add("active"));
   }
@@ -41,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Modale À BOIRE
+  // 4. Modale À BOIRE
   if (btnOpenMenuCn && menuModalCn) {
     btnOpenMenuCn.addEventListener("click", () => menuModalCn.classList.add("active"));
   }
@@ -56,12 +137,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cacheBuster = new Date().getTime();
 
-  // 4. Chargement À MANGER (sans en-têtes : false)
-  fetch(`menu.json?v=${cacheBuster}`)
-    .then((res) => {
-      if (!res.ok) throw new Error("Fichier menu.json introuvable");
-      return res.json();
-    })
+  // Fonction de lecture JSON sécurisée (tolère les virgules en trop)
+  function fetchSafeJson(filename) {
+    return fetch(`${filename}?v=${cacheBuster}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Fichier "${filename}" introuvable (erreur ${res.status})`);
+        return res.text();
+      })
+      .then((rawText) => {
+        const cleaned = rawText.replace(/,\s*([\]}])/g, "$1");
+        return JSON.parse(cleaned);
+      });
+  }
+
+  // 5. Chargement À MANGER (sans en-têtes : false)
+  fetchSafeJson("menu.json")
     .then((data) => renderMenu(
       data, 
       menuContent, 
@@ -70,15 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ))
     .catch((err) => {
       console.error("Erreur À MANGER:", err);
-      if (menuContent) menuContent.innerHTML = "<p style='text-align:center;'>Carte indisponible.</p>";
+      if (menuContent) menuContent.innerHTML = `<p style="text-align:center;">Carte indisponible.<br><small style="opacity:0.6;">${err.message}</small></p>`;
     });
 
-  // 5. Chargement À BOIRE (avec en-têtes : true)
-  fetch(`menu_cn.json?v=${cacheBuster}`)
-    .then((res) => {
-      if (!res.ok) throw new Error("Fichier menu_cn.json introuvable");
-      return res.json();
-    })
+  // 6. Chargement À BOIRE (avec en-têtes : true)
+  fetchSafeJson("menu_cn.json")
     .then((data) => renderMenu(
       data, 
       menuContentCn, 
@@ -87,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ))
     .catch((err) => {
       console.error("Erreur À BOIRE:", err);
-      if (menuContentCn) menuContentCn.innerHTML = "<p style='text-align:center;'>Carte des boissons indisponible.</p>";
+      if (menuContentCn) menuContentCn.innerHTML = `<p style="text-align:center;">Carte des boissons indisponible.<br><small style="opacity:0.6;">${err.message}</small></p>`;
     });
 
   // Fonction générique de rendu
