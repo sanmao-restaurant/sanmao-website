@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cacheBuster = new Date().getTime();
 
-  // 4. Chargement À MANGER (sans en-têtes de catégories : false)
+  // 4. Chargement À MANGER (sans en-têtes : false)
   fetch(`menu.json?v=${cacheBuster}`)
     .then((res) => {
       if (!res.ok) throw new Error("Fichier menu.json introuvable");
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => renderMenu(
       data, 
       menuContent, 
-      "La carte évolue régulièrement au fil des arrivages et des saisons.<br>菜品将根据当日新鲜食材与时令调整。",
+      "Les plats évoluent selon les arrivages frais et les saisons<br>菜品将根据当日新鲜食材与时令调整",
       false
     ))
     .catch((err) => {
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (menuContent) menuContent.innerHTML = "<p style='text-align:center;'>Carte indisponible.</p>";
     });
 
-  // 5. Chargement À BOIRE (avec en-têtes de catégories : true)
+  // 5. Chargement À BOIRE (avec en-têtes : true)
   fetch(`menu_cn.json?v=${cacheBuster}`)
     .then((res) => {
       if (!res.ok) throw new Error("Fichier menu_cn.json introuvable");
