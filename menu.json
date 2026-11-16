@@ -1,7 +1,6 @@
 {
   "categories": [
     {
-      "name": "Groupe 1",
       "items": [
         { "title": "Foie de lapin au thé / 茶香兔子肝", "price": "6" },
         { "title": "Tête de porc fumée / 烟熏猪脸", "price": "9" },
@@ -16,7 +15,6 @@
       ]
     },
     {
-      "name": "Groupe 2",
       "items": [
         { "title": "Lapin grillé à l'ail / 手撕烤兔", "price": "23" },
         { "title": "Porc ribs feuilles de moutarde fermentées / 盐酸排骨", "price": "27" },
@@ -24,7 +22,6 @@
       ]
     },
     {
-      "name": "Groupe 3",
       "items": [
         { "title": "Bonbons et fruits de saison / 水果拼盘白兔糖", "price": "8" }
       ]
