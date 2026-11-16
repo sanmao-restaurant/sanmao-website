@@ -99,11 +99,11 @@ body {
 .btn-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   align-items: center;
 }
 
-/* Boutons MENU et 菜单 : dimensions strictement identiques */
+/* Boutons 菜单 À MANGER et 酒水 À BOIRE : proportions identiques */
 .btn-menu-center {
   background-color: var(--green);
   color: var(--white);
@@ -112,8 +112,8 @@ body {
   font-size: 13px;
   letter-spacing: 1px;
   border: 1px solid var(--green);
-  height: 35px;
-  width: 110px;
+  height: 38px;
+  width: 165px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -121,11 +121,6 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
-}
-
-.btn-menu-center.btn-cn {
-  font-size: 14px;
-  letter-spacing: 2px;
 }
 
 .btn-menu-center:hover {
@@ -155,9 +150,9 @@ body {
   position: relative;
   background-color: var(--card-bg);
   padding: 35px 28px 28px;
-  width: 36vw;
-  max-width: 440px;
-  min-width: 290px;
+  width: 40vw;
+  max-width: 500px;
+  min-width: 300px;
   max-height: calc(85vh - 80px);
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
@@ -208,17 +203,19 @@ body {
   opacity: 1;
 }
 
+/* Espacement entre chaque bloc de catégorie */
 .menu-category {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .menu-category:last-child {
   margin-bottom: 0;
 }
 
+/* En-têtes (affichés uniquement sur la carte À BOIRE) */
 .menu-category h2 {
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
   border-bottom: 1px solid var(--green);
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -235,17 +232,24 @@ body {
   justify-content: space-between;
   margin-bottom: 7px;
   font-size: 11px;
+  gap: 6px;
+}
+
+.item-title {
+  flex-shrink: 1;
 }
 
 .item-dots {
   flex: 1;
+  min-width: 12px;
   border-bottom: 1px dotted var(--green);
-  margin: 0 8px;
+  margin: 0 4px;
   opacity: 0.4;
 }
 
 .item-price {
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .menu-note {
@@ -254,7 +258,7 @@ body {
   text-align: center;
   margin-top: 25px;
   opacity: 0.75;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* Footer */
@@ -309,9 +313,9 @@ body {
   }
 
   .menu-card {
-    width: 90%;
+    width: 92%;
     max-height: 80vh;
-    padding: 30px 20px 20px;
+    padding: 30px 18px 20px;
   }
 
   .footer-info {
