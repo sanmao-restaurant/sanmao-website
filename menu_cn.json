@@ -1,17 +1,6 @@
 {
   "categories": [
     {
-      "name": "软饮 / SOFTS",
-      "items": [
-        { "title": "王老吉 WaLoVi (31cl)", "price": "5" },
-        { "title": "椰奶 Lait de Coco (24,5cl)", "price": "5" },
-        { "title": "韩国葡萄汁 Jus de raisin Coréen (23,8cl)", "price": "5" },
-        { "title": "可乐 UMA Cola UMA (33cl)", "price": "5" },
-        { "title": "无酒精啤酒 IPA soda UMA (33cl)", "price": "6" },
-        { "title": "苹果汁 Jus de pomme trouble (25cl)", "price": "6" }
-      ]
-    },
-    {
       "name": "啤酒(中国) / BIÈRES CHINOISES",
       "items": [
         { "title": "青岛 Tsingtao (64cl)", "price": "8" },
@@ -54,6 +43,17 @@
         { "title": "茅台王子 Moutai Prince (500ml)", "price": "108" },
         { "title": "茅台迷你 Moutai Mini (50ml)", "price": "88" },
         { "title": "茅台2025 Moutai 2025 (500ml)", "price": "288" }
+      ]
+    },
+     {
+      "name": "软饮 / SOFTS",
+      "items": [
+        { "title": "王老吉 WaLoVi (31cl)", "price": "5" },
+        { "title": "椰奶 Lait de Coco (24,5cl)", "price": "5" },
+        { "title": "可乐 Cola (33cl)", "price": "5" },
+        { "title": "韩国葡萄汁 Jus de raisin Coréen (23,8cl)", "price": "5" },
+        { "title": "苹果汁 Jus de pomme trouble (25cl)", "price": "6" },
+        { "title": "无酒精啤酒 IPA soda UMA (33cl)", "price": "6" },
       ]
     }
   ]
