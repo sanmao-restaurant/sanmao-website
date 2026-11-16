@@ -2,28 +2,28 @@
   "categories": [
     {
       "items": [
-        { "title": "Foie de lapin au thé / 茶香兔子肝", "price": "6" },
-        { "title": "Tête de porc fumée / 烟熏猪脸", "price": "9" },
-        { "title": "St Jacques aux oreilles d'argent / 扇贝凉拌银耳", "price": "15" },
-        { "title": "Crevettes frites feuilles de menthe / 花椒薄荷虾", "price": "13" },
-        { "title": "Oeuf vapeur aux palourdes / 蛤蜊蒸蛋", "price": "12" },
-        { "title": "Champignons sauvages à l'huile bouillante / 法式鸡纵油", "price": "16" },
-        { "title": "Céleri et fuzhu en salade / 芹菜腐竹", "price": "8" },
-        { "title": "Sauté Zigong / 自贡爆炒", "price": "18" },
-        { "title": "Légumes de saison / 蒜蓉时蔬", "price": "12" },
-        { "title": "Riz fermier / 农家大米", "price": "3" }
+        { "title": "茶香兔子肝 / Foie de lapin au thé", "price": "6" },
+        { "title": "烟熏猪脸 / Tête de porc fumée", "price": "9" },
+        { "title": "扇贝凉拌银耳 / St Jacques aux oreilles d'argent", "price": "15" },
+        { "title": "花椒薄荷虾 / Crevettes frites feuilles de menthe", "price": "13" },
+        { "title": "蛤蜊蒸蛋 / Oeuf vapeur aux palourdes", "price": "12" },
+        { "title": "法式鸡纵油 / Champignons sauvages à l'huile bouillante", "price": "16" },
+        { "title": "芹菜腐竹 / Céleri et fuzhu en salade", "price": "8" },
+        { "title": "自贡爆炒 / Sauté Zigong", "price": "18" },
+        { "title": "蒜蓉时蔬 / Légumes de saison", "price": "12" },
+        { "title": "农家大米 / Riz fermier", "price": "3" }
       ]
     },
     {
       "items": [
-        { "title": "Lapin grillé à l'ail / 手撕烤兔", "price": "23" },
-        { "title": "Porc ribs feuilles de moutarde fermentées / 盐酸排骨", "price": "27" },
-        { "title": "Loup de mer pickles d'habanada / 跳水鱼", "price": "24" }
+        { "title": "手撕烤兔 / Lapin grillé à l'ail", "price": "23" },
+        { "title": "盐酸排骨 / Porc ribs feuilles de moutarde fermentées", "price": "27" },
+        { "title": "跳水鱼 / Loup de mer pickles d'habanada", "price": "24" }
       ]
     },
     {
       "items": [
-        { "title": "Bonbons et fruits de saison / 水果拼盘白兔糖", "price": "8" }
+        { "title": "水果拼盘白兔糖 / Bonbons et fruits de saison", "price": "8" }
       ]
     }
   ]
