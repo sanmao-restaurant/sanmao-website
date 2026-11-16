@@ -36,16 +36,16 @@
       "items": [
         { "title": "一小杯 Shot", "price": "1" },
         { "title": "紫砂大曲 Zisha Daqu (100ml)", "price": "16" },
+        { "title": "国窖1573 Guojiao 1573 (100/500ml)", "price": "40/168" },
         { "title": "汾酒10年 Fenjiu 10ans (100/500ml)", "price": "17/68" },
         { "title": "汾酒20年 Fenjiu 20ans (100/500ml)", "price": "21/86" },
         { "title": "汾酒30年 Fenjiu 30ans (100/500ml)", "price": "26/118" },
-        { "title": "国窖1573 Guojiao 1573 (100/500ml)", "price": "40/168" },
         { "title": "茅台王子 Moutai Prince (500ml)", "price": "108" },
         { "title": "茅台迷你 Moutai Mini (50ml)", "price": "88" },
         { "title": "茅台2025 Moutai 2025 (500ml)", "price": "288" }
       ]
     },
-     {
+    {
       "name": "软饮 / SOFTS",
       "items": [
         { "title": "王老吉 WaLoVi (31cl)", "price": "5" },
@@ -53,7 +53,7 @@
         { "title": "可乐 Cola (33cl)", "price": "5" },
         { "title": "韩国葡萄汁 Jus de raisin Coréen (23,8cl)", "price": "5" },
         { "title": "苹果汁 Jus de pomme trouble (25cl)", "price": "6" },
-        { "title": "无酒精啤酒 IPA soda UMA (33cl)", "price": "6" },
+        { "title": "无酒精啤酒 IPA soda UMA (33cl)", "price": "6" }
       ]
     }
   ]
