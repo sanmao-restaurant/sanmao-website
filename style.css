@@ -203,28 +203,26 @@ body {
   opacity: 1;
 }
 
-/* En-tête illustré de la carte À MANGER */
+/* En-tête illustré de la carte À MANGER (proportions fidèles à la carte papier) */
 .menu-logos-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 6px;
-  margin-bottom: 24px;
-  padding: 0 4px;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 26px;
+  padding: 0 2px;
 }
 
 .logo-lapin {
-  height: 58px;
+  height: 64px;
   width: auto;
-  mix-blend-mode: multiply;
-  filter: contrast(1.25) brightness(1.08);
+  display: block;
 }
 
 .logo-sanmao-stamp {
-  height: 44px;
-  width: auto;
-  mix-blend-mode: multiply;
-  filter: contrast(1.25) brightness(1.08);
+  width: 140px;
+  height: auto;
+  display: block;
 }
 
 /* Espacement entre chaque bloc de catégorie */
@@ -343,11 +341,11 @@ body {
   }
 
   .logo-lapin {
-    height: 48px !important;
+    height: 52px;
   }
 
   .logo-sanmao-stamp {
-    height: 36px !important;
+    width: 112px;
   }
 
   .footer-info {
